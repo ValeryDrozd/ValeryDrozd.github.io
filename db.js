@@ -70,7 +70,7 @@
 		"categoryId":3,
 		"recommended":true
 	},
-		,{
+		{
 		"url":"carbonara",
 		"productName":"Carbonara pizza",
 		"productDescription":"Classic roll with surimi, avocado, cucumber, tobiko caviar",
