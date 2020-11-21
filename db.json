@@ -4,7 +4,7 @@
 			"url":"peperoney",
 			"productName":"Classic peperoney pizza",
 			"productDescription":"Pizza with Mozarella, Peperoney tomatoes and BBQ sause",
-			"images":"",
+			"images":[],
 			"radius":["20cm"],
 			"price":[169], 
 			"spicy":false
@@ -14,7 +14,7 @@
 		"productName":"Toscana pizza",
 		"productDescription":"Pizza with Chicken, Feta, Mozarella, Cherry tomatoes, Al'fredo sauce, Spinach",
 		"price":[140],
-		"images":"",
+		"images":[],
 		"wegith":[],
 		"radius":["20cm"],
 		"spicy":false
@@ -25,7 +25,7 @@
 		"productName":"Bavarian pizza",
 		"productDescription":"Pizza with Bavarian Sausages, Mozarella, Parmesan and BBQ sause",
 		"price":[145.00,165.00],
-		"images":"",
+		"images":[],
 		"wegith":[],
 		"radius":["20cm","30cm"],
 		"spicy":false
@@ -36,7 +36,7 @@
 		"productName":"Diablo pizza",
 		"productDescription":"Roll with salmon, cream cheese, tobiko caviar and cucumber, sesame and Unagi sauce",
 		"price":[119.00],
-		"images":"",
+		"images":[],
 		"wegith":[8],
 		"radius":["20cm"],
 		"spicy":true
@@ -46,7 +46,7 @@
 		"productName":"Margarita pizza",
 		"productDescription":"Pizza with Mozarella and our Dominos sause",
 		"price":[109],
-		"images":"",
+		"images":[],
 		"wegith":[],
 		"radius":["20cm"],
 		"spicy":false
@@ -57,14 +57,132 @@
 		"productName":"Four cheese pizza",
 		"productDescription":"",
 		"price":[109],
-		"images":"",
+		"images":[],
 		"wegith":[8],
 		"radius":[],
 		"spicy":false
+	},{
+		"id":7,
+		"url":"philadelphia",
+		"productName":"Philadelphia roll",
+		"productDescription":"Classic roll with salmon, cream cheese, avocado, tobiko caviar and cucumber",
+		"price":[45.00],
+		"images":"",
+		"wegith":[],
+		"radius":["8 pieces"],
+		"spicy":false
+	},
+		{
+			"id":8,
+		"url":"avocado",
+		"productName":"Avocado roll",
+		"productDescription":"Roll with salmon, cream cheese, tobiko caviar and cucumber, sesame and Unagi sauce",
+		"price":[119.00],
+		"images":"",
+		"wegith":[8],
+		"radius":["8 pieces"],
+		"spicy":false
+
+	},{
+		"id":9,
+		"url":"dragon",
+		"productName":"Green dragon",
+		"productDescription":"Dragon roll with salmon and eel punk, cream cheese, tobiko caviar, avocado, sesame and unagi sauce",
+		"price":[169],
+		"images":"",
+		"wegith":[],
+		"radius":["8 pieces"],
+		"spicy":false
+	},{
+		"id":10,
+		"url":"Chicken",
+		"productName":"Chicken roll",
+		"productDescription":"Roll with cream cheese, punk chicken, sweet pepper, cucumber, romaine lettuce in cheddar cheese and spice sauce",
+		"price":[109],
+		"images":"",
+		"wegith":[],
+		"radius":["8 pieces"],
+		"spicy":false
+	},
+		{
+			"id":11,
+		"url":"juice",
+		"productName":"Orange juice",
+		"productDescription":"",
+		"price":[40.00,55.00],
+		"images":"",
+		"wegith":[],
+		"radius":["0.3L","0.7L"],
+		"spicy":false
+	},
+	{
+		"id":12,
+		"url":"Coca-Cola",
+		"productName":"Coca-cola",
+		"productDescription":"",
+		"price":[45.00,55.00],
+		"images":"",
+		"wegith":[],
+		"radius":["0.5L","1.0L"],
+		"spicy":false
+	},
+	{
+		"id":13,
+		"url":"fanta",
+		"productName":"Fanta",
+		"productDescription":"",
+		"price":[45.00,55.00],
+		"images":"",
+		"wegith":[],
+		"radius":["0.5L","1.0L"],
+		"spicy":false
+	},{
+		"id":14,
+		"url":"sprite",
+		"productName":"Sprite",
+		"productDescription":"",
+		"price":[45.00,55.00],
+		"images":"",
+		"wegith":[0.5,1.0],
+		"radius":[],
+		"spicy":false
+	},{
+		"id":15,
+		"url":"morshynska",
+		"productName":"Morshynska water",
+		"productDescription":"",
+		"price":[30.00,40.00],
+		"images":"",
+		"wegith":[],
+		"radius":["0.5L","1.0L"],
+		"spicy":false
+	},{
+		"id":16,
+		"url":"redvine",
+		"productName":"Red vine",
+		"productDescription":"Red vine directly from Moldova",
+		"price":[250.00],
+		"images":"",
+		"wegith":[],
+		"radius":["0.75L"],
+		"spicy":false
 	}
 	],
-	"pizza":[0],
-	"sushi":[],
-	"drinks":[],
-	"promos":[]
+	"pizza":[1,2,3,4,5],
+	"sushi":[6,7,8,9,10],
+	"drinks":[11,12,13,14,15,16],
+	"promos":[
+		{
+			"id":1,
+			"images":[],
+			"title":"Buy one, receive two",
+			"description":"If you buy one Peperoney pizza, you will receive Four cheese pizza with 90% discount"
+		},
+		{
+			"id":2,
+			"images":[],
+			"title":"Photo as discount",
+			"description":"You can make a selfie and post it in stories with tagging us as @MafiaPizza and show it in the stories, you'll get 10% discount."
+		}
+	]
 }
