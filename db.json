@@ -1,6 +1,15 @@
 {
-	"products":[],
-	"pizza":[],
+	"products":[{
+			"id":1,
+			"url":"peperoney",
+			"productName":"Classic peperoney pizza",
+			"productDescription":"Classic roll with surimi, avocado, cucumber, tobiko caviar",
+			"images":"",
+			"radius":["20cm"],
+			"price":[169],
+			"spicy":false
+	}],
+	"pizza":[0],
 	"sushi":[],
 	"drinks":[],
 	"promos":[]
