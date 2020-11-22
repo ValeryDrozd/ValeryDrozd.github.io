@@ -193,12 +193,16 @@
 
 	}
 	],
-	"categories":{ 
-		"pizza":{"ids":[1,2,3,4,5]},
-		"sushi":{"ids":[6,7,8,9,10]},
-		"drinks":{"ids":[11,12,13,14,15,16]},
-		"recommended":{"ids":[4,5,7,8]}
-	},
+	"categories":[ 
+		{"id":"pizza",
+		 "values":[0,1,2,3,4,5]},
+		{"id":"sushi",
+		"values":[6,7,8,9,10]},
+		{"id":"drinks",
+		"values":[11,12,13,14,15]},
+		{"id":"recommended",
+			"values":[0,1,3,7]}
+	],
 	"promos":[
 		{
 			"id":1,
