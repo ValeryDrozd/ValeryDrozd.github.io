@@ -8,7 +8,7 @@
 			"radius":["20cm"],
 			"price":[169], 
 			"spicy":false,
-			"recommend":true
+			"recommend":false
 	},{
 		"id":2,
 		"url":"toscana",
@@ -19,7 +19,7 @@
 		"wegith":[],
 		"radius":["20cm"],
 		"spicy":false,
-		"recommend":true
+		"recommend":false
 	},
 		{
 		"id":3,
@@ -31,7 +31,7 @@
 		"wegith":[],
 		"radius":["20cm","30cm"],
 		"spicy":false,
-		"recommend":true
+		"recommend":false
 	},
 		{
 		"id":4,
@@ -40,10 +40,10 @@
 		"productDescription":"Pizza with Mozzarella, Pepperoni, Chili pepper, Bell pepper, Onion, BBQ sauce, Chili sauce, Parsley",
 		"price":[119.00],
 		"images":[],
-		"wegith":[8],
+		"wegith":[],
 		"radius":["20cm"],
 		"spicy":true,
-		"recommend":true
+		"recommend":false
 	},{
 		"id":5,
 		"url":"margarita",
@@ -63,8 +63,8 @@
 		"productDescription":"",
 		"price":[109],
 		"images":[],
-		"wegith":[8],
-		"radius":[],
+		"wegith":[],
+		"radius":["20cm"],
 		"spicy":false,
 		"recommend":true
 		
@@ -78,7 +78,7 @@
 		"wegith":[],
 		"radius":["8 pieces"],
 		"spicy":false,
-		"recommend":true
+		"recommend":false
 	},
 		{
 			"id":8,
@@ -87,7 +87,7 @@
 		"productDescription":"Roll with salmon, cream cheese, tobiko caviar and cucumber, sesame and Unagi sauce",
 		"price":[119.00],
 		"images":"",
-		"wegith":[8],
+		"wegith":[],
 		"radius":["8 pieces"],
 		"spicy":false,
 		"recommend":false
