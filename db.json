@@ -54,7 +54,7 @@
 		"wegith":[],
 		"radius":["20cm"],
 		"spicy":false,
-		"recommend":true
+		"recommend":false
 	},
 	{
 		"id":6,
@@ -193,9 +193,12 @@
 
 	}
 	],
-	"pizza":[1,2,3,4,5],
-	"sushi":[6,7,8,9,10],
-	"drinks":[11,12,13,14,15,16],
+	"categories":{
+		"pizza":[1,2,3,4,5],
+		"sushi":[6,7,8,9,10],
+		"drinks":[11,12,13,14,15,16],
+		"recommended":[4,5,7,8]
+	},
 	"promos":[
 		{
 			"id":1,
