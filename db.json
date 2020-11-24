@@ -81,7 +81,7 @@
 		"recommend":false
 	},
 		{
-			"id":8,
+		"id":8,
 		"url":"avocado",
 		"productName":"Avocado roll",
 		"productDescription":"Roll with salmon, cream cheese, tobiko caviar and cucumber, sesame and Unagi sauce",
@@ -106,7 +106,7 @@
 
 	},{
 		"id":10,
-		"url":"Chicken",
+		"url":"chicken",
 		"productName":"Chicken roll",
 		"productDescription":"Roll with cream cheese, punk chicken, sweet pepper, cucumber, romaine lettuce in cheddar cheese and spice sauce",
 		"price":[109],
@@ -132,7 +132,7 @@
 	},
 	{
 		"id":12,
-		"url":"Coca-Cola",
+		"url":"сocaсola",
 		"productName":"Coca-cola",
 		"productDescription":"",
 		"price":[45.00,55.00],
@@ -206,13 +206,13 @@
 	"promos":[
 		{
 			"id":1,
-			"images":[],
+			"images":"promo1",
 			"title":"Buy one, receive two",
 			"description":"If you buy one Peperoney pizza, you will receive Four cheese pizza with 90% discount"
 		},
 		{
 			"id":2,
-			"images":[],
+			"images":"promo2",
 			"title":"Photo as discount",
 			"description":"You can make a selfie and post it in stories with tagging us as @MafiaPizza and show it in the stories, you'll get 10% discount."
 		}
