@@ -3,6 +3,11 @@
 body{
     margin: 0;
     padding: 0;
+    font-family: 'Fira sans',sans-serif;
+}
+
+button:focus{
+    outline: none;
 }
 
 header{
@@ -27,7 +32,176 @@ header button{
 header button:hover{
     background-color:#F8C471;
 }
+
 header button:focus{
     background-color:#F9E79F;
-    outline:none;
+}
+
+.goods{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.good{
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    height: 550px;
+    border: 1px solid #D5D8DC;
+    box-shadow: #EBEDEF 3px 3px 2px 2px;
+    border-radius: 10px;
+    background-color: #FEF9E7;
+}
+
+.good .buy{
+    width: 90%;
+    font-size: 1.3em;
+    margin: 15px;
+    background-color: #D5F5E3;
+    border:none;
+    border-radius: 10px;
+}
+
+.good .cancel{
+    width: 90%;
+    font-size: 1.3em;
+    margin: 15px;
+    background-color: tomato;
+    border:none;
+    border-radius: 10px;
+}
+
+.good .buy:hover{
+    background-color: #2ECC71;
+}
+
+.good .size{
+    width: 35%;
+    font-size: 1em;
+    border-radius: 10px;
+    margin: 15px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border:none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.good .size:hover{
+    background-color: #882020;
+    color: whitesmoke;
+}
+
+.good span{
+    margin-left: 15px;
+    width: 100%;
+}
+
+.good img{
+    width: 280px;
+    margin: 10px;
+}
+
+#container{
+
+    width: 80%;
+    /*height: 800px;*/
+    margin: 0 auto;
+
+    
+}
+
+#form{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+#form label{
+
+}
+
+#form input{
+    width: 80%;
+    margin:0 auto;
+    height: 1.3em;
+    margin-bottom:20px;
+    font-family: 'Fira Sans',sans-serif;
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+#confirm{
+    background-color: darkorange;
+    height: 50px;
+    width: max-content;
+    font-family: 'Fira Sans',sans-serif;
+    font-size: 2em;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.cartphoto{
+    height: 100px;
+    width: 100px;
+    margin:10px;
+}
+
+
+.foot{
+    background-color: black;
+    color:darkorange;
+    height: 50px;
+    margin-top: 50px;
+}
+
+.orderItem{
+    margin: 0;
+    height:120px;
+    border: 1px solid black;
+    border-radius: 5px;
+    align-items: 35%;
+}
+
+.orderItem *{
+    display: inline-block;
+ 
+    height: 50%;
+}
+
+.orderItem button{
+    height: 40%;
+    background-color: black;
+    color: darkorange;
+    font-family: 'Fira Sans',sans-serif;
+    font-size: larger;
+    width: 70px;
+    border:none;
+    border-radius: 5px;
+}
+
+#item{
+    height: 90vh;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 2fr 2fr 2fr;
+    gap: 0px 0px;
+    grid-template-areas:
+    "image data"
+    "image  ."
+    ".  ."
+     ;
+}
+
+#image{
+    grid-area: image;
+}
+
+#desc{
+    grid-area: data;
 }
