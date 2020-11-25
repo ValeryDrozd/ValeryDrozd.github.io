@@ -9,7 +9,6 @@ function getCart(){
 
 export async function generatePromo(){
     let items = await fetch("https://my-json-server.typicode.com/ValeryDrozd/Valerydrozd.github.io/promos").then(res => res.json());
-    console.log();
     let images = '';
     
     for(let i=0;i<items.length;i++){
@@ -32,7 +31,7 @@ function generateBlock(product){
     form+= '</span>';
   
     form+=' <span id="unitprice'+product['id']+'" > One item price: '+product['price'][0]+' UAH</span>'
-    form+=' <button id="buy'+product['id']+'" value = "'+product['price'][0]+'" class="buy" style="background-color:'+((basket['amount'][String([product['id'],0])]>=1)?"#2ECC71":"#D5F5E3")+';" onclick="buy('+product["id"]+')">'+((basket['amount'][String([product['id'],0])]>=0)?"In the cart":"Buy")+'</button>';
+    form+=' <button id="buy'+product['id']+'" value = "'+product['price'][0]+'" class="buy" '+((basket['amount'][String([product['id'],0])]>=1)?"style = 'background-color:#2ECC71;":"")+' onclick="buy('+product["id"]+')">'+((basket['amount'][String([product['id'],0])]>=0)?"In the cart":"Buy")+'</button>';
     form+='</div>';
     return form;
 }
