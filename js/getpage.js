@@ -3,6 +3,7 @@
 export let routes = {'main': '<div id = "promos">'+
     '<div id="carousel">'+
     '    <img src="./images/loading.svg" style="width: 100%;height: 100%;">'+
+    '</div>'+
     '<div id="buttons">'+
         '<button id="prevbutton" onclick="slideleft()">Previous</button>'+
         '<button id="nextbutton" onclick="slideright()">Next</button>'+
