@@ -7,38 +7,7 @@
        <link href="./css/styles.css" rel="stylesheet">
     </head>
     <body>
-        <header>
-        <button id="mainBtn" onclick="router('')">
-            Main
-        </button>
-        <button id="allBtn" onclick="router('#all')">
-            Catalogue
-        </button>
-        <button id="pizzaBtn" onclick="router('#pizza')">
-            Pizza
-        </button>
-        <button id="sushiBtn" onclick="router('#sushi')">
-            Sushi 
-        </button>
-        <button id="drinkBtn" onclick="router('#drinks')">
-            Drinks
-        </button>
-        
-        <button id="cartBtn" style="float:right;" onclick="router('#cart')">
-            In the cart: <span id="amount">0</span>
-        </button>
-
-        </header>
-
-        <!-- CLASS WITH CODE -->
-        
-        <div id="content" class="content" style="width: 100%; height: 100%;">
-
-            
-        </div>
-        <!-- CLASS WITH CODE. AFTER WRITING TO MOVE TO A JS FILE -->
-
-        <script async type="module">
+        <script type="module">
             import { routes } from './js/getpage.js';
             import { generatePromo,generateItems } from './js/functions.js';
 
@@ -98,6 +67,38 @@
         </script>
         <script type="text/javascript" src='./js/slider.js'></script>
         <script type="text/javascript" src='./js/buy.js'></script>
+        <header>
+        <button id="mainBtn" onclick="router('')">
+            Main
+        </button>
+        <button id="allBtn" onclick="router('#all')">
+            Catalogue
+        </button>
+        <button id="pizzaBtn" onclick="router('#pizza')">
+            Pizza
+        </button>
+        <button id="sushiBtn" onclick="router('#sushi')">
+            Sushi 
+        </button>
+        <button id="drinkBtn" onclick="router('#drinks')">
+            Drinks
+        </button>
+        
+        <button id="cartBtn" style="float:right;" onclick="router('#cart')">
+            In the cart: <span id="amount">0</span>
+        </button>
+
+        </header>
+
+        <!-- CLASS WITH CODE -->
+        
+        <div id="content" class="content" style="width: 100%; height: 100%;">
+
+            
+        </div>
+        <!-- CLASS WITH CODE. AFTER WRITING TO MOVE TO A JS FILE -->
+
+      
         <footer class="foot">
             
         </footer>
