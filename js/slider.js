@@ -10,9 +10,7 @@ function init(){
     document.getElementById("promos").style.width = size;
 }
 
-
-
-export function slideleft(){
+function slideleft(){
     if(size==0)init();
     if(number!=0){
         carousel.style.transition = "transform 0.4s ease-in-out";
@@ -21,7 +19,7 @@ export function slideleft(){
     }
 }
 
-export function slideright(){
+function slideright(){
     if(size==0)init();
     if(number!=carouselimages.length-1){
         carousel.style.transition = "transform 0.4s ease-in-out";
