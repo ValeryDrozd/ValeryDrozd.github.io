@@ -42,8 +42,9 @@
         <!-- CLASS WITH CODE. AFTER WRITING TO MOVE TO A JS FILE -->
 
         <script type="module">
-            import { routes } from './js/getpage.js'
-            import { generatePromo,generateItems } from './js/functions.js'
+            import { routes } from './js/getpage.js';
+            import { generatePromo,generateItems } from './js/functions.js';
+            import { slideleft,slideright } from './js/slider.js';
             function router(){
                 let link = window.location.href;
                 if(link.indexOf('#')==-1)link = 'main';
