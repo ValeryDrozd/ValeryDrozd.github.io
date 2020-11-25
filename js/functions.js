@@ -1,3 +1,12 @@
+function getCart(){
+    let basket = localStorage.getItem('cart');
+    if(basket!=null)basket = JSON.parse(basket);
+    else
+        basket = {'items':[],'amount':{},'number':0};
+    return basket;
+}
+
+
 export async function generatePromo(){
     let items = await fetch("https://my-json-server.typicode.com/ValeryDrozd/Valerydrozd.github.io/promos").then(res => res.json());
     console.log();
