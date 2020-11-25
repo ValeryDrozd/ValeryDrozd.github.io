@@ -69,7 +69,8 @@
                         console.log(5);
                         console.log(routes['main']);
                         document.getElementById('content').innerHTML = routes['main'];
-                        document.getElementById('goodsField').innerHTML = generateItems('recommended');
+                        let forms = generateItems('recommended');
+                        document.getElementById('goodsField').innerHTML = forms;
                         generatePromo();
                         break;
                 }
