@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Mafia pizza
+        </title>
+       <link href="./css/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+        <button>
+            Main
+        </button>
+        <button>
+            Catalogue
+        </button>
+        <button>
+            Pizza
+        </button>
+        <button>
+            Sushi 
+        </button>
+        <button>
+            Drink
+        </button>
+        <button>
+            Promotions
+        </button>
+        
+        <button style="float:right;">
+            In the cart: <span id="amount">0</span>
+        </button>
+
+        </header>
+
+        <!-- CLASS WITH CODE -->
+        
+        <div id="content" class="content" style="width: 100%; height: 100%;">
+
+            
+        </div>
+        <!-- CLASS WITH CODE. AFTER WRITING TO MOVE TO A JS FILE -->
+
+        <script type="module">
+            import { routes } from './js/getpage.js';
+            import { generatePromo,generateItems } from './js/functions.js';
+            import { slideleft,slideright } from './js/slider.js';
+            async function router(){
+                let link = window.location.href;
+                if(link.indexOf('#')==-1)link = 'main';
+                else
+                    link = link.substring(link.indexOf('#'));
+                console.log(link);
+                switch(link){
+                    case 'sushi':
+                        console.log(1);
+                        break;
+                    case 'pizza':
+                        console.log(2);
+
+                        break;
+                    case 'drinks':
+                        console.log(3);
+                        break;
+                    case 'all':
+                        console.log(4);
+                        break;
+                    default:
+                        console.log(5);
+                        console.log(routes['main']);
+                        document.getElementById('content').innerHTML = routes['main'];
+                        let forms = await generateItems('recommended');
+                        document.getElementById('goodsField').innerHTML = forms;
+                        generatePromo();
+                        document.getElementById("prevbutton").style.display = 'block';
+                        document.getElementById("nextbutton").style.display = 'block';
+                        break;
+                }
+            }
+            window.onload = router();
+        </script>
+        <script type="text/javascript" src='./js/slider.js'>
+        
+        </script>
+        <footer class="foot">
+            
+        </footer>
+    </body>
+</html>
