@@ -2,8 +2,6 @@
     
 export let routes = {'main': '<div id = "promos">'+
     '<div id="carousel">'+
-    '<img src="./images/promo1.jpg">'+
-    '<img src="./images/promo2.jpg">'+
     '</div>'+
     '<div id="buttons">'+
         '<button id="prevbutton" onclick="slideleft()">Previous</button>'+
