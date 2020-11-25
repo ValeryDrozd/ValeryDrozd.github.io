@@ -6,6 +6,10 @@ body{
     font-family: 'Fira sans',sans-serif;
 }
 
+button{
+    cursor: pointer;
+}
+
 button:focus{
     outline: none;
 }
@@ -113,37 +117,14 @@ header button:focus{
     background-color: #D5F5E3;
     border:none;
     border-radius: 10px;
-}
-
-.good .cancel{
-    width: 90%;
-    font-size: 1.3em;
-    margin: 15px;
-    background-color: tomato;
-    border:none;
-    border-radius: 10px;
+    cursor: pointer;
 }
 
 .good .buy:hover{
     background-color: #2ECC71;
 }
 
-.good .size{
-    width: 35%;
-    font-size: 1em;
-    border-radius: 10px;
-    margin: 15px;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    border:none;
-    border-radius: 10px;
-    cursor: pointer;
-}
 
-.good .size:hover{
-    background-color: #882020;
-    color: whitesmoke;
-}
 
 .good span{
     margin-left: 15px;
