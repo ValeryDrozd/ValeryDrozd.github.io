@@ -45,7 +45,7 @@
             import { routes } from './js/getpage.js';
             import { generatePromo,generateItems } from './js/functions.js';
             import { slideleft,slideright } from './js/slider.js';
-            function router(){
+            async function router(){
                 let link = window.location.href;
                 if(link.indexOf('#')==-1)link = 'main';
                 else
@@ -69,7 +69,7 @@
                         console.log(5);
                         console.log(routes['main']);
                         document.getElementById('content').innerHTML = routes['main'];
-                        let forms = generateItems('recommended');
+                        let forms = await generateItems('recommended');
                         document.getElementById('goodsField').innerHTML = forms;
                         generatePromo();
                         break;
