@@ -9,7 +9,25 @@
     <body>
 
         <header id='head'>
-       <img src="./images/loading.svg" alt='loadimage' style="height: 100%;width: 100%;">
+            <button id="mainBtn" class="nav" data-path=""> 
+                Main
+            </button>
+            <button id="allBtn" class="nav" data-path="#all">
+                Catalogue
+            </button>
+            <button id="pizzaBtn" class="nav" data-path="#pizza">
+                Pizza
+            </button>
+            <button id="sushiBtn" class="nav" data-path="#sushi">
+                Sushi 
+            </button>
+            <button id="drinkBtn" class="nav" data-path="#drinks">
+                Drinks
+            </button>
+            
+            <button id="cartBtn" class="nav" style="float:right;" data-path="#cart">
+                In the cart: <span id="amount">0</span>
+            </button>
 
         </header>
 
@@ -25,8 +43,12 @@
             import { routes } from './js/getpage.js';
             import { generatePromo,generateItems } from './js/functions.js';
 
+
+            docuemnt.querySelectorAll('.nav').forEach(el => {
+              el.addEventListener('click', jump)
+            })
+
             async function router(path){
-                document.getElementById('head').innerHTML = routes['header'];
                 console.log(path);
                 let link = window.location.href;
                 let buttonList = document.querySelectorAll('header button');
@@ -61,6 +83,9 @@
                     case '#all':
                         document.getElementById('allBtn').style.backgroundColor = '#F9E79F';
                         document.getElementById('content').innerHTML = routes['all'];
+                        document.getElementById('PizzaField').innerHTML = generateItems('pizza');
+                        document.getElementById('SushiField').innerHTML = generateItems('sushi');
+                        document.getElementById('DrinksField').innerHTML = generateItems('drinks');
                         break;
                     default:
                         document.getElementById('mainBtn').style.backgroundColor = '#F9E79F';
@@ -68,15 +93,16 @@
                         let ls = await generateItems('recommended');
                         document.getElementById('goodsField').innerHTML = ls;
                         generatePromo();
-                        document.getElementById("prevbutton").style.display = 'inline';
-                        document.getElementById("nextbutton").style.display = 'inline';
+                        document.getElementById("prevbutton").style.display = 'inline-block';
+                        document.getElementById("nextbutton").style.display = 'inline-block';
                         break;
                 }
             }
 
             function jump(path){
-                window.location.href = "https://valerydrozd.github.io/"+path;
-                router();
+                alert(path);
+              //  window.location.href = "https://valerydrozd.github.io/"+path;
+              //  router();
             }
             window.onload = router();
         </script>
