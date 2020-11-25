@@ -8,26 +8,26 @@
     </head>
     <body>
         <header>
-        <button>
+        <button id="mainBtn">
             Main
         </button>
-        <button>
+        <button id="allBtn">
             Catalogue
         </button>
-        <button>
+        <button id="pizzaBtn">
             Pizza
         </button>
-        <button>
+        <button id="sushiBtn">
             Sushi 
         </button>
-        <button>
+        <button id="drinkBtn">
             Drink
         </button>
-        <button>
+        <button id="promosBtn">
             Promotions
         </button>
         
-        <button style="float:right;">
+        <button id="cartBtn" style="float:right;">
             In the cart: <span id="amount">0</span>
         </button>
 
@@ -44,44 +44,62 @@
         <script type="module">
             import { routes } from './js/getpage.js';
             import { generatePromo,generateItems } from './js/functions.js';
-           // import { slideleft,slideright } from './js/slider.js';
+
             async function router(){
                 let link = window.location.href;
+                let buttonList = document.querySelectorAll('header button');
+                for(let i=0;i<buttonList.length;i++){
+                    buttonList[i].style.backgroundColor = '#F8C471';
+                }
+
                 if(link.indexOf('#')==-1)link = 'main';
                 else
                     link = link.substring(link.indexOf('#'));
                 console.log(link);
                 switch(link){
                     case 'sushi':
-                        console.log(1);
-                        break;
-                    case 'pizza':
-                        console.log(2);
+                        document.getElementById('sushiBtn').style.backgroundColor = '#F9E79F';
+                        document.getElementById('content').innerHTML = routes['sushi'];
+                        document.getElementById('goodsField').innerHTML = await generateItems('sushi');
 
                         break;
+                    case 'pizza':
+                        document.getElementById('pizzaBtn').style.backgroundColor = '#F9E79F';
+                        document.getElementById('content').innerHTML = routes['pizza'];
+                        document.getElementById('goodsField').innerHTML = await generateItems('pizza');
+                        break;
                     case 'drinks':
-                        console.log(3);
+                        document.getElementById('drinkBtn').style.backgroundColor = '#F9E79F';
+                        document.getElementById('content').innerHTML = routes['drinks'];
+                        document.getElementById('goodsField').innerHTML = await generateItems('drinks');
+                        break;
+                    case 'cart':
+                        document.getElementById('cartBtn').style.backgroundColor = '#F9E79F';
+                        document.getElementById('content').innerHTML = routes['cart'];
                         break;
                     case 'all':
-                        console.log(4);
+                        document.getElementById('allBtn').style.backgroundColor = '#F9E79F';
+                        document.getElementById('content').innerHTML = routes['all'];
                         break;
                     default:
-                        console.log(5);
-                        console.log(routes['main']);
+                        document.getElementById('mainBtn').style.backgroundColor = '#F9E79F';
                         document.getElementById('content').innerHTML = routes['main'];
-                        let forms = await generateItems('recommended');
-                        document.getElementById('goodsField').innerHTML = forms;
+                        document.getElementById('goodsField').innerHTML = await generateItems('recommended');
                         generatePromo();
-                        document.getElementById("prevbutton").style.display = 'block';
-                        document.getElementById("nextbutton").style.display = 'block';
+                        document.getElementById("prevbutton").style.display = 'inline';
+                        document.getElementById("nextbutton").style.display = 'inline';
                         break;
                 }
             }
+
+            function jump(path){
+                window.location.href = "https://valerydrozd.github.io/"+path;
+                router();
+            }
             window.onload = router();
         </script>
-        <script type="text/javascript" src='./js/slider.js'>
-        
-        </script>
+        <script type="text/javascript" src='./js/slider.js'></script>
+        <script type="text/javascript" src='./js/buy.js'></script>
         <footer class="foot">
             
         </footer>
