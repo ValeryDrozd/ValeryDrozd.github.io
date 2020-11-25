@@ -44,7 +44,7 @@
         <script type="module">
             import { routes } from './js/getpage.js';
             import { generatePromo,generateItems } from './js/functions.js';
-            import { slideleft,slideright } from './js/slider.js';
+           // import { slideleft,slideright } from './js/slider.js';
             async function router(){
                 let link = window.location.href;
                 if(link.indexOf('#')==-1)link = 'main';
@@ -72,10 +72,15 @@
                         let forms = await generateItems('recommended');
                         document.getElementById('goodsField').innerHTML = forms;
                         generatePromo();
+                        document.getElementById("prevbutton").style.display = 'block';
+                        document.getElementById("nextbutton").style.display = 'block';
                         break;
                 }
             }
             window.onload = router();
+        </script>
+        <script type="text/javascript" src='./js/slider.js'>
+        
         </script>
         <footer class="foot">
             
