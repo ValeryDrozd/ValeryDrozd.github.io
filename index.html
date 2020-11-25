@@ -48,14 +48,27 @@
 
             function router(){
                 let link = window.location.href;
+                if(link.indexOf('#')==-1)link = 'main';
+                else
+                    link = link.substring(link.indexOf('#'));
+                console.log(link);
                 switch(link){
                     case 'sushi':
+                        console.log(1);
                         break;
                     case 'pizza':
+                        console.log(2);
+
                         break;
                     case 'drinks':
+                        console.log(3);
+                        break;
+                    case 'all':
+                        console.log(4);
                         break;
                     default:
+                        console.log(5);
+                        console.log(routes['main']);
                         document.getElementById('content').innerHTML = routes['main'];
                         break;
                 }
