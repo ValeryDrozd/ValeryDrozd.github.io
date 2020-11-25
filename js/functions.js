@@ -22,7 +22,7 @@ function generateBlock(product){
     let form = ' <div class="good">';
     form+= '<img src="./images/'+product['url']+'.jpg" alt = "image">';
     form+= '<p style="font: size 1.3;font-weight: bolder;" >'+product['productName']+'</p>'; 
-    form+= '<hr style="width:80%;>';
+    form+= '<hr style="width:80%;">';
     form+= '<p style="margin-bottom:0;"> '+product['productDescription']+' </p>';
     form+= '<span>';
     for(let i=0;i<product['radius'].length;i++){
@@ -31,7 +31,7 @@ function generateBlock(product){
     form+= '</span>';
   
     form+=' <span id="unitprice'+product['id']+'" > One item price: '+product['price'][0]+' UAH</span>'
-    form+=' <button id="buy'+product['id']+'" value = "'+product['price'][0]+'" class="buy" '+((basket['amount'][String([product['id'],0])]>=1)?"style = 'background-color:#2ECC71;":"")+' onclick="buy('+product["id"]+')">'+((basket['amount'][String([product['id'],0])]>=0)?"In the cart":"Buy")+'</button>';
+    form+=' <button id="buy'+product['id']+'" value = "'+product['price'][0]+'" class="buy" '+((basket['amount'][String([product['id'],0])]>=1)?"style = 'background-color:#2ECC71;'":"")+' onclick="buy('+product["id"]+')">'+((basket['amount'][String([product['id'],0])]>=0)?"In the cart":"Buy")+'</button>';
     form+='</div>';
     return form;
 }
