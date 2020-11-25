@@ -8,23 +8,23 @@
     </head>
     <body>
         <header>
-        <button id="mainBtn" onclick="jump('')">
+        <button id="mainBtn" onclick="router('')">
             Main
         </button>
-        <button id="allBtn" onclick="jump('#all')">
+        <button id="allBtn" onclick="router('#all')">
             Catalogue
         </button>
-        <button id="pizzaBtn" onclick="jump('#pizza')">
+        <button id="pizzaBtn" onclick="router('#pizza')">
             Pizza
         </button>
-        <button id="sushiBtn" onclick="jump('#sushi')">
+        <button id="sushiBtn" onclick="router('#sushi')">
             Sushi 
         </button>
-        <button id="drinkBtn" onclick="jump('#drinks')">
+        <button id="drinkBtn" onclick="router('#drinks')">
             Drinks
         </button>
         
-        <button id="cartBtn" style="float:right;" onclick="jump('#cart')">
+        <button id="cartBtn" style="float:right;" onclick="router('#cart')">
             In the cart: <span id="amount">0</span>
         </button>
 
@@ -42,7 +42,8 @@
             import { routes } from './js/getpage.js';
             import { generatePromo,generateItems } from './js/functions.js';
 
-            async function router(){
+            async function router(path){
+                console.log(path);
                 let link = window.location.href;
                 let buttonList = document.querySelectorAll('header button');
                 for(let i=0;i<buttonList.length;i++){
@@ -54,26 +55,26 @@
                     link = link.substring(link.indexOf('#'));
                 console.log(link);
                 switch(link){
-                    case 'sushi':
+                    case '#sushi':
                         document.getElementById('sushiBtn').style.backgroundColor = '#F9E79F';
                         document.getElementById('content').innerHTML = routes['sushi'];
                         document.getElementById('goodsField').innerHTML = await generateItems('sushi');
                         break;
-                    case 'pizza':
+                    case '#pizza':
                         document.getElementById('pizzaBtn').style.backgroundColor = '#F9E79F';
                         document.getElementById('content').innerHTML = routes['pizza'];
                         document.getElementById('goodsField').innerHTML = await generateItems('pizza');
                         break;
-                    case 'drinks':
+                    case '#drinks':
                         document.getElementById('drinkBtn').style.backgroundColor = '#F9E79F';
                         document.getElementById('content').innerHTML = routes['drinks'];
                         document.getElementById('goodsField').innerHTML = await generateItems('drinks');
                         break;
-                    case 'cart':
+                    case '#cart':
                         document.getElementById('cartBtn').style.backgroundColor = '#F9E79F';
                         document.getElementById('content').innerHTML = routes['cart'];
                         break;
-                    case 'all':
+                    case '#all':
                         document.getElementById('allBtn').style.backgroundColor = '#F9E79F';
                         document.getElementById('content').innerHTML = routes['all'];
                         break;
