@@ -36,29 +36,31 @@
         <!-- CLASS WITH CODE -->
         
         <div id="content" class="content" style="width: 100%; height: 100%;">
-            
-            <div id = "promos" style="padding: 0%; width: 80%; height: 50vh;margin: 0 auto;margin-top: 10px;">
-                <div id="first" style="float:left;background-color: blue;width: 100%;height: 100%;">
-                    <button id="divbutton" style="margin-left:20%;">
-                        Go
-                    </button>
-                </div>                
-                <div id="second" style="float:left;background-color:brown; width: 0%;height: 100%;">
-            
-                </div>                
-            </div>
-            <button id="animate">animate</button>
 
-            <hr>
-            <span><h1 style="margin-left:10px;margin-top: 0px;">The most popular orders</h1></span>    
-            <div class = "goods" id='goodsField'>
-                <img src="./images/loading.svg" style="width: 100%;height: 250px;">
-            </div> 
-            <script src="./js/main.js"></script>'
             
         </div>
         <!-- CLASS WITH CODE. AFTER WRITING TO MOVE TO A JS FILE -->
-
+        <div id="scripts">
+            
+        </div>
+        <script type="module" src="./js/getpage.js"></script>
+        <script type="text/javascript">
+      
+            function router(){
+                let link = window.location.href;
+                switch(link){
+                    case 'sushi':
+                        break;
+                    case 'pizza':
+                        break;
+                    case 'drinks':
+                        break;
+                    default:
+                        break;
+                }
+            }
+            window.onload = router();
+        </script>
         <footer class="foot">
             
         </footer>
