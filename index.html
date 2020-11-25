@@ -8,26 +8,23 @@
     </head>
     <body>
         <header>
-        <button id="mainBtn">
+        <button id="mainBtn" onclick="jump('')">
             Main
         </button>
-        <button id="allBtn">
+        <button id="allBtn" onclick="jump('#all')">
             Catalogue
         </button>
-        <button id="pizzaBtn">
+        <button id="pizzaBtn" onclick="jump('#pizza')">
             Pizza
         </button>
-        <button id="sushiBtn">
+        <button id="sushiBtn" onclick="jump('#sushi')">
             Sushi 
         </button>
-        <button id="drinkBtn">
-            Drink
-        </button>
-        <button id="promosBtn">
-            Promotions
+        <button id="drinkBtn" onclick="jump('#drinks')">
+            Drinks
         </button>
         
-        <button id="cartBtn" style="float:right;">
+        <button id="cartBtn" style="float:right;" onclick="jump('#cart')">
             In the cart: <span id="amount">0</span>
         </button>
 
@@ -61,7 +58,6 @@
                         document.getElementById('sushiBtn').style.backgroundColor = '#F9E79F';
                         document.getElementById('content').innerHTML = routes['sushi'];
                         document.getElementById('goodsField').innerHTML = await generateItems('sushi');
-
                         break;
                     case 'pizza':
                         document.getElementById('pizzaBtn').style.backgroundColor = '#F9E79F';
@@ -84,7 +80,8 @@
                     default:
                         document.getElementById('mainBtn').style.backgroundColor = '#F9E79F';
                         document.getElementById('content').innerHTML = routes['main'];
-                        document.getElementById('goodsField').innerHTML = await generateItems('recommended');
+                        let ls = await generateItems('recommended');
+                        document.getElementById('goodsField').innerHTML = ls;
                         generatePromo();
                         document.getElementById("prevbutton").style.display = 'inline';
                         document.getElementById("nextbutton").style.display = 'inline';
