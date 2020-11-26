@@ -120,7 +120,7 @@ header button:focus{
     cursor: pointer;
 }
 
-.good button{
+.good img{
     cursor: pointer;
 }
 
@@ -152,10 +152,6 @@ header button:focus{
     width: 50%;
     margin: 0 auto;
     margin-top: 30px;
-}
-
-#form label{
-
 }
 
 #form input{
