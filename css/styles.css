@@ -120,10 +120,13 @@ header button:focus{
     cursor: pointer;
 }
 
+.good button{
+    cursor: pointer;
+}
+
 .good .buy:hover{
     background-color: #2ECC71;
 }
-
 
 
 .good span{
