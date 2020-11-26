@@ -100,7 +100,7 @@
             }
 
             function jump(path){
-                alert(path);
+                const path = this.getAttribute('data-path')
                 window.location.href = "https://valerydrozd.github.io/"+path;
                 router();
             }
