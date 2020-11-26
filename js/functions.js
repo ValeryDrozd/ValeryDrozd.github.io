@@ -1,4 +1,4 @@
-function getCart(){
+export function getCart(){
     let basket = localStorage.getItem('cart');
     if(basket!=null)basket = JSON.parse(basket);
     else
@@ -26,7 +26,7 @@ function generateBlock(product){
     form+= '<p style="margin-bottom:0;"> '+product['productDescription']+' </p>';
     form+= '<span>';
     for(let i=0;i<product['radius'].length;i++){
-        form+= '<input type="radio" onchange="changeElem('+product['id']+','+product['price'][i]+')" name="'+product['id']+'" '+((i==0)?'checked':"")+' value = "'+i+'" >'+product['radius'][i]+'<br>';
+        form+= '<input type="radio" style="margin-right:20px;" onchange="changeElem('+product['id']+','+product['price'][i]+')" name="'+product['id']+'" '+((i==0)?'checked':"")+' value = "'+i+'" >'+product['radius'][i];
     }
     form+= '</span>';
   
@@ -57,3 +57,4 @@ export async function generateItems(path){
     }
     return forms;
 }
+
