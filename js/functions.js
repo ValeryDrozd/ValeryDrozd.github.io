@@ -20,7 +20,7 @@ export async function generatePromo(){
 function generateBlock(product){
     let basket = getCart();
     let form = ' <div class="good">';
-    form+= '<img src="./images/'+product['url']+'.jpg" alt = "image">';
+    form+= '<img src="./images/'+product['url']+'.jpg" alt = "image" class="goodImg" date-path="#products/'+product['url']+'" >';
     form+= '<p style="font: size 1.3;font-weight: bolder;" >'+product['productName']+'</p>'; 
     form+= '<hr style="width:80%;">';
     form+= '<p style="margin-bottom:0;"> '+product['productDescription']+' </p>';
