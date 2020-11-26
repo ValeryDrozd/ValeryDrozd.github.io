@@ -83,9 +83,9 @@
                     case '#all':
                         document.getElementById('allBtn').style.backgroundColor = '#F9E79F';
                         document.getElementById('content').innerHTML = routes['all'];
-                        document.getElementById('PizzaField').innerHTML = generateItems('pizza');
-                        document.getElementById('SushiField').innerHTML = generateItems('sushi');
-                        document.getElementById('DrinksField').innerHTML = generateItems('drinks');
+                        document.getElementById('PizzaField').innerHTML = await generateItems('pizza');
+                        document.getElementById('SushiField').innerHTML = await generateItems('sushi');
+                        document.getElementById('DrinksField').innerHTML = await generateItems('drinks');
                         break;
                     default:
                         document.getElementById('mainBtn').style.backgroundColor = '#F9E79F';
