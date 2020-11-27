@@ -64,7 +64,7 @@ export async function generateItems(path){
     return forms;
 }
 
-export async function generateProduct(){
+export async function generateProduct(path){
     let product = await fetch("https://my-json-server.typicode.com/ValeryDrozd/Valerydrozd.github.io/"+path).then(res => res.json());
     document.getElementById('image').innerHTML = '<img src= "./images/'+product['url']+'" >';
     let desc = genDescBlock(product);
