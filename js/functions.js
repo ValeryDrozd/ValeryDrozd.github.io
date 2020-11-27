@@ -101,6 +101,7 @@ export async function generateOrderList(){
         form+='<td>Full position price</td>';
         form+='<td class="remove"></td>';
         form+='</tr>';
+    let sum = 0;
     for(let i=0;i<basket['items'].length;i++){
         let productID = basket['items'][i][0]-1;
         let productSize = basket['items'][i][1]*1;
@@ -125,15 +126,17 @@ export async function generateOrderList(){
         form+= String(product['price'][productSize*1]);
         form+='</td>';
         //DECREASE
-        form+='<td class="less" class="change" onclick=decrease('+productID+','+productSize+','+product['price'][productSize*1]+') >';
+
+        form+='<td class="less change" onclick=decrease('+productID+','+productSize+','+product['price'][productSize*1]+') >';
         form+= 'Less'
         form+='</td>';
         //AMOUNT
         form+='<td class="amount" id=amount'+String(productID)+String(productSize)+'>';
         form+=  String(basket['amount'][basket['items'][i]]);
+        sum+=basket['amount'][basket['items'][i]]*product['price'][productSize*1];
         form+='</td>';
         //INCREASE
-        form+='<td class="increase" class="change" onclick="increase('+productID+','+productSize+','+String(product['price'][productSize*1])+')" >';
+        form+='<td class="increase change" onclick="increase('+productID+','+productSize+','+String(product['price'][productSize*1])+')" >';
         form+=  'More';
         form+='</td>';
         //FINALSUM
@@ -141,13 +144,13 @@ export async function generateOrderList(){
         form+=  String(basket['amount'][basket['items'][i]]*product['price'][productSize*1])+'UAH';
         form+='</td>';
         //REMOVE
-        form+='<td class="remove" class="change" onclick="remove('+productID+','+productSize+','+String(product['price'][productSize*1])+')" >';
+        form+='<td class="remove change" onclick="remove('+productID+','+productSize+','+String(product['price'][productSize*1])+')" >';
         form+=  'Remove';
         form+='</td>';
         form+='</tr>';
     }
     form+='</table></div>'
-    form += '<table class="itemList"><tr><td> All price </td><td></td><td></td><td></td><td id="allsum"></td></tr></table>';
+    form += '<table class="itemList"><tr><td style="font-weigth:bolder;height:100%;"> All price </td><td></td><td></td><td></td><td id="allsum" style="font-weigth:bolder">'+sum+'UAH</td></tr></table>';
     form += '<button id="confirm"> CONFIRM </button></div>';
     form += '<button id="clearorderlist"> Clear order list </button></div>';
 
