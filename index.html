@@ -54,7 +54,7 @@
                 for(let i=0;i<buttonList.length;i++){
                     buttonList[i].style.backgroundColor = 'darkorange';
                 }
-                document.getElementById('amount').innerText = await basket['number'];
+                document.getElementById('amount').innerText = await getCart()['number'];
                 switch(link){
                     case '#sushi':
                         document.getElementById('sushiBtn').style.backgroundColor = '#F9E79F';
