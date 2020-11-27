@@ -18,6 +18,7 @@ export async function generatePromo(){
 }
 
 function genDescBlock(product){
+    let basket = getCart();
     let form = '';
     form+= '<p style="font-size: 1.2em;font-weight: bolder;" >'+product['productName']+'</p>'; 
     form+= '<hr style="width:80%;">';
@@ -29,7 +30,7 @@ function genDescBlock(product){
     form+= '</span><br>';
   
     form+=' <span id="unitprice'+product['id']+'" > One item price: '+product['price'][0]+' UAH</span>'
-    form+=' <button id="buy'+product['id']+'" value = "'+product['price'][0]+'" class="buy" '+((getCart()['amount'][String([product['id'],0])]>=1)?"style = 'background-color:#2ECC71;'":"")+' onclick="buy('+product["id"]+')">'+((basket['amount'][String([product['id'],0])]>=0)?"In the cart":"Buy")+'</button>';
+    form+=' <button id="buy'+product['id']+'" value = "'+product['price'][0]+'" class="buy" '+((basket['amount'][String([product['id'],0])]>=1)?"style = 'background-color:#2ECC71;'":"")+' onclick="buy('+product["id"]+')">'+((basket['amount'][String([product['id'],0])]>=0)?"In the cart":"Buy")+'</button>';
     return form;
 }
 
