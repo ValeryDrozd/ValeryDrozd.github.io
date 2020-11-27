@@ -245,6 +245,7 @@ table{
 tr{
     margin: 20px;
     padding: 10px;
+    border-top: 2px solid black;
 }
 
 td{
