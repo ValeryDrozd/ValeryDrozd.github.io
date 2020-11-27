@@ -1,6 +1,6 @@
 {
 	"products":[{
-			"id":1,
+			"id":"peperoney",
 			"url":"peperoney",
 			"productName":"Classic peperoney pizza",
 			"productDescription":"Pizza with Mozarella, Peperoney tomatoes and BBQ sause",
@@ -10,7 +10,7 @@
 			"spicy":false,
 			"recommend":false
 	},{
-		"id":2,
+		"id":"toscana",
 		"url":"toscana",
 		"productName":"Toscana pizza",
 		"productDescription":"Pizza with Chicken, Feta, Mozarella, Cherry tomatoes, Al'fredo sauce, Spinach",
@@ -22,7 +22,7 @@
 		"recommend":false
 	},
 		{
-		"id":3,
+		"id":"bavarian",
 		"url":"bavarian",
 		"productName":"Bavarian pizza",
 		"productDescription":"Pizza with Bavarian Sausages, Mozarella, Parmesan and BBQ sause",
@@ -34,7 +34,7 @@
 		"recommend":false
 	},
 		{
-		"id":4,
+		"id":"diablo",
 		"url":"diablo",
 		"productName":"Diablo pizza",
 		"productDescription":"Pizza with Mozzarella, Pepperoni, Chili pepper, Bell pepper, Onion, BBQ sauce, Chili sauce, Parsley",
@@ -45,7 +45,7 @@
 		"spicy":true,
 		"recommend":false
 	},{
-		"id":5,
+		"id":"margarita",
 		"url":"margarita",
 		"productName":"Margarita pizza",
 		"productDescription":"Pizza with Mozarella and our Dominos sause",
@@ -57,7 +57,7 @@
 		"recommend":false
 	},
 	{
-		"id":6,
+		"id":"cheese",
 		"url":"cheese",
 		"productName":"Four cheese pizza",
 		"productDescription":"",
@@ -69,7 +69,7 @@
 		"recommend":true
 		
 	},{
-		"id":7,
+		"id":"philadelphia",
 		"url":"philadelphia",
 		"productName":"Philadelphia roll",
 		"productDescription":"Classic roll with salmon, cream cheese, avocado, tobiko caviar and cucumber",
@@ -81,7 +81,7 @@
 		"recommend":false
 	},
 		{
-		"id":8,
+		"id":"avocado",
 		"url":"avocado",
 		"productName":"Avocado roll",
 		"productDescription":"Roll with salmon, cream cheese, tobiko caviar and cucumber, sesame and Unagi sauce",
@@ -93,7 +93,7 @@
 		"recommend":false
 
 	},{
-		"id":9,
+		"id":"dragon",
 		"url":"dragon",
 		"productName":"Green dragon",
 		"productDescription":"Dragon roll with salmon and eel punk, cream cheese, tobiko caviar, avocado, sesame and unagi sauce",
@@ -105,7 +105,7 @@
 		"recommend":false
 
 	},{
-		"id":10,
+		"id":"chicken",
 		"url":"chicken",
 		"productName":"Chicken roll",
 		"productDescription":"Roll with cream cheese, punk chicken, sweet pepper, cucumber, romaine lettuce in cheddar cheese and spice sauce",
@@ -118,7 +118,7 @@
 
 	},
 		{
-			"id":11,
+			"id":"juice",
 		"url":"juice",
 		"productName":"Orange juice",
 		"productDescription":"",
@@ -131,7 +131,7 @@
 
 	},
 	{
-		"id":12,
+		"id":"cc",
 		"url":"cc",
 		"productName":"Coca-cola",
 		"productDescription":"",
@@ -144,7 +144,7 @@
 
 	},
 	{
-		"id":13,
+		"id":"fanta",
 		"url":"fanta",
 		"productName":"Fanta",
 		"productDescription":"",
@@ -156,7 +156,7 @@
 		"recommend":false
 
 	},{
-		"id":14,
+		"id":"sprite",
 		"url":"sprite",
 		"productName":"Sprite",
 		"productDescription":"",
@@ -168,7 +168,7 @@
 		"recommend":false
 
 	},{
-		"id":15,
+		"id":"morshynska",
 		"url":"morshynska",
 		"productName":"Morshynska water",
 		"productDescription":"",
@@ -180,7 +180,7 @@
 		"recommend":false
 
 	},{
-		"id":16,
+		"id":"redvine",
 		"url":"redvine",
 		"productName":"Red vine",
 		"productDescription":"Red vine directly from Moldova",
