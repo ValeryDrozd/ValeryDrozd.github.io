@@ -41,7 +41,7 @@
 
         <script async type="module">
             import { routes } from './js/getpage.js';
-            import { generatePromo,generateItems,getCart } from './js/functions.js';
+            import { generatePromo,generateItems,getCart,generateProduct,valid } from './js/functions.js';
 
 
             document.querySelectorAll('.nav').forEach(el => {
@@ -76,10 +76,16 @@
                         document.getElementById('content').innerHTML = routes['drinks'];
                         document.getElementById('goodsField').innerHTML = await generateItems('drinks');
                         break;
-                    case '#cart':
-                        document.getElementById('cartBtn').style.backgroundColor = '#F9E79F';
+                    case ('#order'):
+                        if(getCart()['number']>0){
+                            document.getElementById('cartBtn').style.backgroundColor = '#F9E79F';
+                            document.getElementById('content').innerHTML = routes['cart'];
+                            break;
+                        }else
+                        link = '#all';
+                    case('#cart'):
+                        document.getElementById('cart').style.backgroundColor = '#F9E79F';
                         document.getElementById('content').innerHTML = routes['cart'];
-                        break;
                     case '#all':
                         document.getElementById('allBtn').style.backgroundColor = '#F9E79F';
                         document.getElementById('content').innerHTML = routes['all'];
@@ -87,6 +93,14 @@
                         document.getElementById('SushiField').innerHTML = await generateItems('sushi');
                         document.getElementById('DrinksField').innerHTML = await generateItems('drinks');
                         break;
+                    case link:
+                        let path = link.substring(link.indexOf('/')+1);
+                        if(valid(path)){
+                            document.getElementById('content').innerHTML = routes['item'];
+                            generateProduct();
+                            break;
+                        }
+                        window.location.href = 'valerydrozd.githuub.io';
                     default:
                         document.getElementById('mainBtn').style.backgroundColor = '#F9E79F';
                         document.getElementById('content').innerHTML = routes['main'];
@@ -97,6 +111,11 @@
                         document.getElementById("nextbutton").style.display = 'inline-block';
                         break;
                 }
+                document.querySelectorAll('.good img').forEach(el => {
+                    el.addEventListener('click', jump);
+                })
+                let images = document.querySelectorAll();
+
             }
 
             function jump(){
