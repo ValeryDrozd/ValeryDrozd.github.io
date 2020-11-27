@@ -54,6 +54,7 @@
                 for(let i=0;i<buttonList.length;i++){
                     buttonList[i].style.backgroundColor = 'darkorange';
                 }
+                document.getElementById('amount').innerText = await basket['number'];
                 switch(link){
                     case '#sushi':
                         document.getElementById('sushiBtn').style.backgroundColor = '#F9E79F';
@@ -70,10 +71,16 @@
                         document.getElementById('content').innerHTML = routes['drinks'];
                         document.getElementById('goodsField').innerHTML = await generateItems('drinks');
                         break;
-                    case '#cart':
+                    case ('#order'):
+                        if(getCart()['number']>0){
+                            document.getElementById('cartBtn').style.backgroundColor = '#F9E79F';
+                            document.getElementById('content').innerHTML = routes['cart'];
+                            break;
+                        }else
+                        link = '#all';
+                    case('#cart'):
                         document.getElementById('content').innerHTML = routes['cart'];
-                        document.getElementById('orderList').innerHTML = await generateOrderList();
-                        break;
+                        document.getElementById('orderList').innerHTML = generateOrderList();
                     case '#all':
                         document.getElementById('allBtn').style.backgroundColor = '#F9E79F';
                         document.getElementById('content').innerHTML = routes['all'];
