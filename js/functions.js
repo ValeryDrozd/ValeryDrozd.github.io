@@ -64,7 +64,7 @@ export async function generateItems(path){
     return forms;
 }
 
-export async function generateProduct(){
+export async function generateProduct(path){
     let product = await fetch("https://my-json-server.typicode.com/ValeryDrozd/Valerydrozd.github.io/"+path).then(res => res.json());
     document.getElementById('image').innerHTML = '<img src= "./images/'+product['url']+'" >';
     let desc = genDescBlock(product);
@@ -72,14 +72,12 @@ export async function generateProduct(){
 }
 
 export async function valid(path){
-    let resp =  await fetch("https://my-json-server.typicode.com/ValeryDrozd/Valerydrozd.github.io/products/"+path).then(res=>
-        {
-            if(res.ok){
-                return true;
-            }
-            else 
-            return false;
-        }
-    );
-    return resp;
+    let group = path.substr(path.indexOf('#')+1,path.indexOf('/')-1);
+    let url = path.substr(path.indexOf('/')+1);
+    if(group!='products')return false;
+    let items = await fetch("https://my-json-server.typicode.com/ValeryDrozd/Valerydrozd.github.io/products").then(res => res.json());  
+    for(let i=0;i<items.length;i++){
+        if(Srting(items[i]['url'])==url)return true;
+    }
+    return false;
 }
