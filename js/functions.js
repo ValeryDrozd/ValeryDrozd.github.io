@@ -36,7 +36,7 @@ function genDescBlock(product){
 
 function generateBlock(product){
     let form = ' <div class="good">';
-    form+= '<img src="./images/'+product['url']+'.jpg" alt = "image" class="goodImg" data-path="#products/'+product['url']+'" >';
+    form+= '<img src="./images/'+product['url']+'.jpg" alt = "image" class="goodImg" data-path="#products/'+product['id']+'" >';
     form+=genDescBlock(product);
     form+='</div>';
     return form;
