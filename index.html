@@ -88,8 +88,8 @@
                         document.getElementById('DrinksField').innerHTML = await generateItems('drinks');
                         break;
                     case link:
-                        let path = link.substring(link.indexOf('/')+1);
-                        let t = await valid(path);
+                        //let path = link.substring(link.indexOf('/')+1);
+                        let t = await valid(link);
                         if(t==true){
                             document.getElementById('content').innerHTML = routes['item'];
                             generateProduct();
