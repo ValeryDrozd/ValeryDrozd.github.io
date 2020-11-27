@@ -270,7 +270,7 @@ td .image{
     width: 60%;
     margin: 0 auto;
     margin-top: 20px;
-
+    display: block;
 }
 
 #clearorderlist{
@@ -282,5 +282,7 @@ td .image{
     border: 1px solid black;
     border-radius: 5px;
     width: 60%;    
+    margin:0 auto;
     margin-top: 20px;
+    display: block;
 }
