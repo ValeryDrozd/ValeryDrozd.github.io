@@ -125,7 +125,7 @@ export async function generateOrderList(){
         form+= String(product['price'][productSize*1]);
         form+='</td>';
         //DECREASE
-        form+='<td class="less change" onclick=decrease('+productID+','+productSize+','+product['price'][productSize*1]+') >';
+        form+='<td class="less" class="change" onclick=decrease('+productID+','+productSize+','+product['price'][productSize*1]+') >';
         form+= 'Less'
         form+='</td>';
         //AMOUNT
@@ -133,7 +133,7 @@ export async function generateOrderList(){
         form+=  String(basket['amount'][basket['items'][i]]);
         form+='</td>';
         //INCREASE
-        form+='<td class="increase change" onclick="increase('+productID+','+productSize+','+String(product['price'][productSize*1])+')" >';
+        form+='<td class="increase" class="change" onclick="increase('+productID+','+productSize+','+String(product['price'][productSize*1])+')" >';
         form+=  'More';
         form+='</td>';
         //FINALSUM
@@ -141,15 +141,15 @@ export async function generateOrderList(){
         form+=  String(basket['amount'][basket['items'][i]]*product['price'][productSize*1])+'UAH';
         form+='</td>';
         //REMOVE
-        form+='<td class="remove change" onclick="remove('+productID+','+productSize+','+String(product['price'][productSize*1])+')" >';
+        form+='<td class="remove" class="change" onclick="remove('+productID+','+productSize+','+String(product['price'][productSize*1])+')" >';
         form+=  'Remove';
         form+='</td>';
         form+='</tr>';
     }
     form+='</table></div>'
     form += '<table class="itemList"><tr><td> All price </td><td></td><td></td><td></td><td id="allsum"></td></tr></table>';
-    form += '<button id="confirm" style="width: 100%;"> CONFIRM </button></div>';
-    form += '<button id="clearorderlist" style="width: 100%;"> Clear order list </button></div>';
+    form += '<button id="confirm"> CONFIRM </button></div>';
+    form += '<button id="clearorderlist"> Clear order list </button></div>';
 
     return form;
 }

@@ -63,7 +63,7 @@ export let routes = {
         
     'cart':
     '<div id="orderList">'+ 
-    '<img src="./images/loading.svg" alt="loadimage" style="width: 100%;height: 100%;">'+
+    '<img src="./images/loading.svg" alt="loadimage" style="width: 100%;height: 250px;">'+
     '</div>',
     'item':
         '<div id="item">'+
