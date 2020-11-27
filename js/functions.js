@@ -44,7 +44,6 @@ function generateBlock(product){
 
 export async function generateItems(path){
     let basket = getCart();
-    document.getElementById('amount').innerText = basket['number'];
     let href = window.location.href;
     let inds;
     if(path!='all'){
@@ -126,23 +125,23 @@ export async function generateOrderList(){
         form+= String(product['price'][productSize*1]);
         form+='</td>';
         //DECREASE
-        form+='<td class="less" onclick=decrease('+productID+','+productSize+','+product['price'][productSize*1]+') class="change">';
+        form+='<td class="less change" onclick=decrease('+productID+','+productSize+','+product['price'][productSize*1]+') >';
         form+= 'Less'
         form+='</td>';
         //AMOUNT
         form+='<td class="amount" id=amount'+String(productID)+String(productSize)+'>';
-        form+=  String(basket['amount'][basket['items'][i]])+'UAH';
+        form+=  String(basket['amount'][basket['items'][i]]);
         form+='</td>';
         //INCREASE
-        form+='<td class="increase" onclick="increase('+productID+','+productSize+','+String(product['price'][productSize*1])+')" class="change">';
+        form+='<td class="increase change" onclick="increase('+productID+','+productSize+','+String(product['price'][productSize*1])+')" >';
         form+=  'More';
         form+='</td>';
         //FINALSUM
         form+='<td class="allsum" id="sum'+String(productID)+String(productSize)+'">';
-        form+=  String(basket['amount'][basket['items'][i]]*product['price'][productSize*1]);
+        form+=  String(basket['amount'][basket['items'][i]]*product['price'][productSize*1])+'UAH';
         form+='</td>';
         //REMOVE
-        form+='<td class="remove" onclick="remove('+productID+','+productSize+','+String(product['price'][productSize*1])+')" >';
+        form+='<td class="remove change" onclick="remove('+productID+','+productSize+','+String(product['price'][productSize*1])+')" >';
         form+=  'Remove';
         form+='</td>';
         form+='</tr>';
@@ -150,7 +149,7 @@ export async function generateOrderList(){
     form+='</table></div>'
     form += '<table class="itemList"><tr><td> All price </td><td></td><td></td><td></td><td id="allsum"></td></tr></table>';
     form += '<button id="confirm" style="width: 100%;"> CONFIRM </button></div>';
-    form += '<button id="confirm" style="width: 100%;"> Clear form </button></div>';
+    form += '<button id="clearorderlist" style="width: 100%;"> Clear order list </button></div>';
 
     return form;
 }
