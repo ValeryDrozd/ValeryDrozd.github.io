@@ -67,7 +67,7 @@ export let routes = {
     '</div>',
     'item':
         '<div id="item">'+
-        '<div id="image><img src="./images/loading.svg" alt="loadimage" style="width: 100%;height: 100%;"></div>'+
+        '<div id="image"><img src="./images/loading.svg" alt="loadimage" style="width: 100%;height: 100%;"></div>'+
         '<div id="desc"><img src="./images/loading.svg" alt="loadimage" style="width: 100%;height: 100%;"></div>'+
         '</div>'
 
