@@ -120,7 +120,7 @@ header button:focus{
     cursor: pointer;
 }
 
-.good button{
+.good button {
     cursor: pointer;
 }
 
@@ -137,6 +137,7 @@ header button:focus{
 .good img{
     width: 280px;
     margin: 10px;
+    cursor: pointer;
 }
 
 #container{
