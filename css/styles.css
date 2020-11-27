@@ -165,15 +165,7 @@ header button:focus{
     font-weight: bolder;
 }
 
-#confirm{
-    background-color: darkorange;
-    height: 50px;
-    width: max-content;
-    font-family: 'Fira Sans',sans-serif;
-    font-size: 2em;
-    border: 1px solid black;
-    border-radius: 5px;
-}
+
 
 .cartphoto{
     height: 100px;
@@ -263,4 +255,30 @@ td .image{
 
 td .change{
     cursor: pointer;
+}
+
+
+
+#confirm{
+    background-color: darkorange;
+    height: 50px;
+    width: max-content;
+    font-family: 'Fira Sans',sans-serif;
+    font-size: 2em;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 60%;
+    margin-top: 20px;
+}
+
+#clearorderlist{
+    background-color: tomato;
+    height: 50px;
+    width: max-content;
+    font-family: 'Fira Sans',sans-serif;
+    font-size: 2em;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 60%;
+    margin-top: 20px;
 }
