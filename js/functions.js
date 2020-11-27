@@ -17,13 +17,11 @@ export async function generatePromo(){
     document.getElementById('carousel').innerHTML = images;
 }
 
-function generateBlock(product){
-    let basket = getCart();
-    let form = ' <div class="good">';
-    form+= '<img src="./images/'+product['url']+'.jpg" alt = "image" class="goodImg" date-path="#products/'+product['url']+'" >';
-    form+= '<p style="font: size 1.3;font-weight: bolder;" >'+product['productName']+'</p>'; 
+function genDescBlock(product){
+    let form = '';
+    form+= '<p style="font-size: 1.2em;font-weight: bolder;" >'+product['productName']+'</p>'; 
     form+= '<hr style="width:80%;">';
-    form+= '<p style="margin-bottom:0;"> '+product['productDescription']+' </p>';
+    form+= '<p style="margin-bottom:0;"> '+product['productDescription']+((product['spicy']==true)?'<font style="color:red">.Spicy.</font>':'')+' </p>';
     form+= '<span>';
     for(let i=0;i<product['radius'].length;i++){
         form+= '<span style="margin-right:20px;"><input type="radio" style="margin-right:5px;" onchange="changeElem('+product['id']+','+product['price'][i]+')" name="'+product['id']+'" '+((i==0)?'checked':"")+' value = "'+i+'" >'+product['radius'][i]+'</span>';
@@ -32,6 +30,14 @@ function generateBlock(product){
   
     form+=' <span id="unitprice'+product['id']+'" > One item price: '+product['price'][0]+' UAH</span>'
     form+=' <button id="buy'+product['id']+'" value = "'+product['price'][0]+'" class="buy" '+((basket['amount'][String([product['id'],0])]>=1)?"style = 'background-color:#2ECC71;'":"")+' onclick="buy('+product["id"]+')">'+((basket['amount'][String([product['id'],0])]>=0)?"In the cart":"Buy")+'</button>';
+    return form;
+}
+
+function generateBlock(product){
+    let basket = getCart();
+    let form = ' <div class="good">';
+    form+= '<img src="./images/'+product['url']+'.jpg" alt = "image" class="goodImg" date-path="#products/'+product['url']+'" >';
+    form+=genDescBlock(product);
     form+='</div>';
     return form;
 }
@@ -58,3 +64,21 @@ export async function generateItems(path){
     return forms;
 }
 
+export function generateProduct(){
+    let product = await  await fetch("https://my-json-server.typicode.com/ValeryDrozd/Valerydrozd.github.io/"+path).then(res => res.json());
+    document.getElementById('image').innerHTML = '<img src= "./images/'+product['url']+'" >';
+    let desc = genDescBlock(product);
+    document.getElementById('desc').innerHTML = desc;
+}
+
+export function valid(path){
+    return await fetch("https://my-json-server.typicode.com/ValeryDrozd/Valerydrozd.github.io/products/"+path).then(res=>
+        {
+            if(res.ok){
+                return true;
+            }
+            else 
+            return false;
+        }
+    );
+}
