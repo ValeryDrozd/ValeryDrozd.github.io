@@ -162,8 +162,8 @@
 		"productDescription":"",
 		"price":[45.00,55.00],
 		"images":"",
-		"wegith":[0.5,1.0],
-		"radius":[],
+		"wegith":[],
+		"radius":["0.5L","1.0L"],
 		"spicy":false,
 		"recommend":false
 

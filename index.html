@@ -56,7 +56,7 @@
                     buttonList[i].style.backgroundColor = 'darkorange';
                 }
 
-                if(link.indexOf('#')==-1)link = 'main';
+                if(link.indexOf('#')==-1)link = '';
                 else
                     link = link.substring(link.indexOf('#'));
                 console.log(link);
@@ -95,12 +95,13 @@
                         break;
                     case link:
                         let path = link.substring(link.indexOf('/')+1);
-                        if(valid(path)){
+                        let t = valid(path);
+                        if(t==true){
                             document.getElementById('content').innerHTML = routes['item'];
                             generateProduct();
                             break;
                         }
-                        window.location.href = 'valerydrozd.githuub.io';
+                        window.location.href = 'valerydrozd.github.io';
                     default:
                         document.getElementById('mainBtn').style.backgroundColor = '#F9E79F';
                         document.getElementById('content').innerHTML = routes['main'];
@@ -114,6 +115,8 @@
                 document.querySelectorAll('.good img').forEach(el => {
                     el.addEventListener('click', jump);
                 })
+                let images = document.querySelectorAll();
+
             }
 
             function jump(){
