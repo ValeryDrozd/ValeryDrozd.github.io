@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Mafia pizza
+        </title>
+       <link href="./css/styles.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <header id='head'>
+            <button id="mainBtn" class="nav" data-path=""> 
+                Main
+            </button>
+            <button id="allBtn" class="nav" data-path="#all">
+                Catalogue
+            </button>
+            <button id="pizzaBtn" class="nav" data-path="#pizza">
+                Pizza
+            </button>
+            <button id="sushiBtn" class="nav" data-path="#sushi">
+                Sushi 
+            </button>
+            <button id="drinkBtn" class="nav" data-path="#drinks">
+                Drinks
+            </button>
+            
+            <button id="cartBtn" class="nav" style="float:right;" data-path="#cart">
+                In the cart: <span id="amount">0</span>
+            </button>
+
+        </header>
+
+        <!-- CLASS WITH CODE -->
+        
+        <div id="content" class="content" style="width: 100%; height: 100%;">
+
+            
+        </div>
+        <!-- CLASS WITH CODE. AFTER WRITING TO MOVE TO A JS FILE -->
+
+        <script async type="module">
+            import { routes } from './js/getpage.js';
+            import { generatePromo,generateItems,getCart,generateProduct,valid } from './js/functions.js';
+
+
+            document.querySelectorAll('.nav').forEach(el => {
+              el.addEventListener('click', jump)
+            })
+
+            async function router(){
+                let link = window.location.hash;
+                let buttonList = document.querySelectorAll('header button');
+                for(let i=0;i<buttonList.length;i++){
+                    buttonList[i].style.backgroundColor = 'darkorange';
+                }
+                switch(link){
+                    case '#sushi':
+                        document.getElementById('sushiBtn').style.backgroundColor = '#F9E79F';
+                        document.getElementById('content').innerHTML = routes['sushi'];
+                        document.getElementById('goodsField').innerHTML = await generateItems('sushi');
+                        break;
+                    case '#pizza':
+                        document.getElementById('pizzaBtn').style.backgroundColor = '#F9E79F';
+                        document.getElementById('content').innerHTML = routes['pizza'];
+                        document.getElementById('goodsField').innerHTML = await generateItems('pizza');
+                        break;
+                    case '#drinks':
+                        document.getElementById('drinkBtn').style.backgroundColor = '#F9E79F';
+                        document.getElementById('content').innerHTML = routes['drinks'];
+                        document.getElementById('goodsField').innerHTML = await generateItems('drinks');
+                        break;
+                    case ('#order'):
+                        if(getCart()['number']>0){
+                            document.getElementById('cartBtn').style.backgroundColor = '#F9E79F';
+                            document.getElementById('content').innerHTML = routes['cart'];
+                            break;
+                        }else
+                        link = '#all';
+                    case('#cart'):
+                        document.getElementById('cart').style.backgroundColor = '#F9E79F';
+                        document.getElementById('content').innerHTML = routes['cart'];
+                    case '#all':
+                        document.getElementById('allBtn').style.backgroundColor = '#F9E79F';
+                        document.getElementById('content').innerHTML = routes['all'];
+                        document.getElementById('PizzaField').innerHTML = await generateItems('pizza');
+                        document.getElementById('SushiField').innerHTML = await generateItems('sushi');
+                        document.getElementById('DrinksField').innerHTML = await generateItems('drinks');
+                        break;
+                    case link:
+                        //let path = link.substring(link.indexOf('/')+1);
+                        let t = await valid(link);
+                        if(t==true){
+                            document.getElementById('content').innerHTML = routes['item'];
+                            generateProduct(link);
+                            break;
+                        }
+                        window.location.hash = "";
+                    default:
+                        document.getElementById('mainBtn').style.backgroundColor = '#F9E79F';
+                        document.getElementById('content').innerHTML = routes['main'];
+                        let ls = await generateItems('recommended');
+                        document.getElementById('goodsField').innerHTML = ls;
+                        generatePromo();
+                        document.getElementById("prevbutton").style.display = 'inline-block';
+                        document.getElementById("nextbutton").style.display = 'inline-block';
+                        break;
+                }
+                document.querySelectorAll('.good img').forEach(el => {
+                    el.addEventListener('click', jump);
+                })
+            }
+
+            function jump(){
+                const path = this.getAttribute('data-path')
+                window.location.hash = path;
+                router();
+            }
+            window.onload = router();
+        </script>
+        <script type="text/javascript" src='./js/slider.js'></script>
+        <script type="text/javascript" src='./js/buy.js'></script>
+        <footer class="foot">
+            
+        </footer>
+    </body>
+</html>
