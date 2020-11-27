@@ -72,7 +72,7 @@
                         break;
                     case '#cart':
                         document.getElementById('content').innerHTML = routes['cart'];
-                        document.getElementById('orderList').innerHTML = generateOrderList();
+                        document.getElementById('orderList').innerHTML = await generateOrderList();
                         break;
                     case '#all':
                         document.getElementById('allBtn').style.backgroundColor = '#F9E79F';
