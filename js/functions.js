@@ -81,3 +81,62 @@ export async function valid(path){
     }
     return false;
 }
+
+export async function generateOrderList(){
+    let basket = getCart();
+    if(basket['number']==0){
+        return "<h1>Your cart is empty... Buy something!</h1>";
+    }
+    let productList = await fetch("https://my-json-server.typicode.com/ValeryDrozd/Valerydrozd.github.io/products").then(res => res.json());
+    let form = '<div id="list"><table>';
+        form+='<tr>';
+        form+='<td></td>';
+        form+='<td>Product name</td>';
+        form+='<td>Product size</td>';
+        form+='<td>One item price</td>';
+        form+='<td></td>';
+        form+='<td> Amount of item</td>';
+        form+='<td> </td>';
+        form+='<td>Full position price</td>';
+        form+='<td></td>';
+        form+='</tr>';
+    for(let i=0;i<basket['items'].length;i++){
+        let productID = basket['items'][i][0]-1;
+        let productSize = basket['items'][i][1]*1;
+        let product=productList[productID];
+        form+='<tr id="elem'+productID+','+productSize+'">';
+        form+='<td>';
+        form+= '<img src= "./images/'+product['url']+'.jpg" >';
+        form+='</td>';
+        form+='<td>';
+        form+= String(product['productName']);
+        form+='</td>';
+        form+='<td>';
+        form+= String(product['radius'][productSize]);
+        form+='</td>';
+        form+='<td>';
+        form+= String(product['price'][productSize*1]);
+        form+='</td>';
+        form+='<td onclick=decrease('+productID+','+productSize+','+product['price'][productSize*1]+') class="change">';
+        form+= 'Less'
+        form+='</td>';
+        form+='<td id=amount'+String(productID)+String(productSize)+'>';
+        form+=  String(basket['amount'][basket['items'][i]])+'UAH';
+        form+='</td>';
+        form+='<td  onclick="increase('+productID+','+productSize+','+String(product['price'][productSize*1])+')" class="change">';
+        form+=  'More';
+        form+='</td>';
+        form+='<td id="sum'+String(productID)+String(productSize)+'">';
+        form+=  String(basket['amount'][basket['items'][i]]*product['price'][productSize*1]);
+        form+='</td>';
+        
+        form+='<td onclick="remove('+productID+','+productSize+','+String(product['price'][productSize*1])+')" >';
+        form+=  'Remove';
+        form+='</td>';
+        form+='</tr>';
+    }
+    form+='</table></div>'
+    form += '<table class="itemList"><tr><td> All price </td><td></td><td></td><td></td><td id="allsum"></td></tr></table>';
+    form += '<button id="confirm" style="width: 100%;"> CONFIRM </button></div>';
+    return form;
+}
