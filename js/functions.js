@@ -77,7 +77,7 @@ export async function valid(path){
     if(group!='products')return false;
     let items = await fetch("https://my-json-server.typicode.com/ValeryDrozd/Valerydrozd.github.io/products").then(res => res.json());  
     for(let i=0;i<items.length;i++){
-        if(Srting(items[i]['id'])==url)return true;
+        if(String(items[i]['id'])==url)return true;
     }
     return false;
 }
