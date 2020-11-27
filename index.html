@@ -41,7 +41,7 @@
 
         <script async type="module">
             import { routes } from './js/getpage.js';
-            import { generatePromo,generateItems,getCart,generateProduct,valid } from './js/functions.js';
+            import { generatePromo,generateItems,getCart,generateProduct,valid,generateOrderLists } from './js/functions.js';
 
 
             document.querySelectorAll('.nav').forEach(el => {
@@ -78,8 +78,8 @@
                         }else
                         link = '#all';
                     case('#cart'):
-                        document.getElementById('cart').style.backgroundColor = '#F9E79F';
                         document.getElementById('content').innerHTML = routes['cart'];
+                        document.getElementById('orderList').innerHTML = generateOrderList();
                     case '#all':
                         document.getElementById('allBtn').style.backgroundColor = '#F9E79F';
                         document.getElementById('content').innerHTML = routes['all'];
@@ -88,7 +88,6 @@
                         document.getElementById('DrinksField').innerHTML = await generateItems('drinks');
                         break;
                     case link:
-                        //let path = link.substring(link.indexOf('/')+1);
                         let t = await valid(link);
                         if(t==true){
                             document.getElementById('content').innerHTML = routes['item'];
