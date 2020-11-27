@@ -64,14 +64,14 @@ export async function generateItems(path){
     return forms;
 }
 
-export function generateProduct(path){
+export async function generateProduct(){
     let product = await fetch("https://my-json-server.typicode.com/ValeryDrozd/Valerydrozd.github.io/"+path).then(res => res.json());
     document.getElementById('image').innerHTML = '<img src= "./images/'+product['url']+'" >';
     let desc = genDescBlock(product);
     document.getElementById('desc').innerHTML = desc;
 }
 
-export function valid(path){
+export async function valid(path){
     return await fetch("https://my-json-server.typicode.com/ValeryDrozd/Valerydrozd.github.io/products/"+path).then(res=>
         {
             if(res.ok){
