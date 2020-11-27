@@ -95,13 +95,13 @@
                         break;
                     case link:
                         let path = link.substring(link.indexOf('/')+1);
-                        let t = valid(path);
+                        let t = await valid(path);
                         if(t==true){
                             document.getElementById('content').innerHTML = routes['item'];
                             generateProduct();
                             break;
                         }
-                        window.location.href = 'valerydrozd.github.io';
+                        window.location.href = '';
                     default:
                         document.getElementById('mainBtn').style.backgroundColor = '#F9E79F';
                         document.getElementById('content').innerHTML = routes['main'];
