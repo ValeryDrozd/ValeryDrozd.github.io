@@ -70,14 +70,7 @@
                         document.getElementById('content').innerHTML = routes['drinks'];
                         document.getElementById('goodsField').innerHTML = await generateItems('drinks');
                         break;
-                    case ('#order'):
-                        if(getCart()['number']>0){
-                            document.getElementById('cartBtn').style.backgroundColor = '#F9E79F';
-                            document.getElementById('content').innerHTML = routes['cart'];
-                            break;
-                        }else
-                        link = '#all';
-                    case('#cart'):
+                    case '#cart':
                         document.getElementById('content').innerHTML = routes['cart'];
                         document.getElementById('orderList').innerHTML = generateOrderList();
                     case '#all':
