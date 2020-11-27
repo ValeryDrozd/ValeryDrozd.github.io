@@ -48,18 +48,12 @@
               el.addEventListener('click', jump)
             })
 
-            async function router(path){
-                console.log(path);
-                let link = window.location.href;
+            async function router(){
+                let link = window.location.hash;
                 let buttonList = document.querySelectorAll('header button');
                 for(let i=0;i<buttonList.length;i++){
                     buttonList[i].style.backgroundColor = 'darkorange';
                 }
-
-                if(link.indexOf('#')==-1)link = '';
-                else
-                    link = link.substring(link.indexOf('#'));
-                console.log(link);
                 switch(link){
                     case '#sushi':
                         document.getElementById('sushiBtn').style.backgroundColor = '#F9E79F';
@@ -101,7 +95,7 @@
                             generateProduct();
                             break;
                         }
-                        window.location.href = "https://valerydrozd.github.io/";
+                        window.location.hash = "";
                     default:
                         document.getElementById('mainBtn').style.backgroundColor = '#F9E79F';
                         document.getElementById('content').innerHTML = routes['main'];
@@ -121,7 +115,7 @@
 
             function jump(){
                 const path = this.getAttribute('data-path')
-                window.location.href = "https://valerydrozd.github.io/"+path;
+                window.location.hash = path;
                 router();
             }
             window.onload = router();
