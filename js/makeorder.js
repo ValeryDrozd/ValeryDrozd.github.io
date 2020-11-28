@@ -162,7 +162,8 @@ async function genOrderList(){
     }
     
     form+='</table><h3>Final sum'+sum+'</h3>'
-    form+='Order will be delivered to '+order['orderdata'][id]['delCity']+' '+order['orderdata'][id]['address']+' at '+date;
+    let deliveryDate = new Date(order['orderdata'][id]['address']);
+    form+='Order will be delivered to '+order['orderdata'][id]['delCity']+' '+order['orderdata'][id]['address']+' at '+deliveryDate.getDate(),' ,'+deliveryDate.getHours()+':'+deliveryDate.getMinutes();
     form+='</div>';
 
     document.getElementById('orderList').innerHTML = form;
