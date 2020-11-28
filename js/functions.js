@@ -11,7 +11,7 @@ export async function generatePromoPage(path){
     document.getElementById("promoImage").innerHTML = '<img src="./images/'+promo['images']+'.jpg" alt="promoimage">';
     let content = '<h2 style="text-align:center;">'+promo['title']+'</h2><br>';
     content+='<p style="font-size:1.1em;font-weight:bolder">'+promo['description']+'</p>';
-    content+='<p style="font-size:1.2em;font-weight:bolder">Time when promo is avaiable'+promo['time']+'</p>';
+    content+='<p style="font-size:1.2em;font-weight:bolder">Time when promo is avaiable: '+promo['time']+'</p>';
     document.getElementById("promoDescription").innerHTML = content;
 }
 
