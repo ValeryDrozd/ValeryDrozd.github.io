@@ -110,7 +110,7 @@ function hideshow(param){
     document.getElementById('cardcreds').style.display = 'block';
 }
 
-function genOrderList(){
+async function genOrderList(){
     let container = '<div id="orderList">'+ 
     '<img src="./images/loading.svg" alt="loadimage" style="width: 100%;height: 250px;">'+
     '</div>';
@@ -174,9 +174,7 @@ function genOrderList(){
 
 
 
-
-
-async function buy(){
+async function makeorder(){
     let userData = {};
     userData['name'] = document.getElementById('name').value;
     userData['surname'] = document.getElementById('surname').value;

@@ -62,7 +62,7 @@ export let routes = {
         '<label for="city">Enter city</label><br>'+
         '<input type="text" id="city"></br>'+
     '</div>'+
-    '<button id="buybutton" onclick="buy()"> Make order </button>'+
+    '<button id="buybutton" onclick="makeorder()"> Make order </button>'+
 '</div>',
         
     'cart':
