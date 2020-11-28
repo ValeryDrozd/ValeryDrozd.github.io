@@ -6,7 +6,7 @@ export function getCart(){
     return basket;
 }
 
-export function generatePromoPage(path){
+export async function generatePromoPage(path){
     let promo = await fetch("https://my-json-server.typicode.com/ValeryDrozd/Valerydrozd.github.io/"+path.substr(1)).then(res => res.json());
     document.getElementById("promoImage").innerHTML = '<img src="./images/'+promo[images]+'.jpg" alt="promoimage">';
     let content = '<h2 style="text-align:center;">'+promo['title']+'</h2><br>';
