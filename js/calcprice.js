@@ -13,6 +13,7 @@ function increase(productID,productSize,productPrice){
     localStorage.setItem('cart',JSON.stringify(basket));
     basket['number']++;
     document.getElementById('amount').innerText = basket['number'];
+    localStorage.setItem('cart',JSON.stringify(basket));
 }
 
 function decrease(productID,productSize,productPrice){
@@ -26,6 +27,7 @@ function decrease(productID,productSize,productPrice){
         localStorage.setItem('cart',JSON.stringify(basket));
         basket['number']--;
         document.getElementById('amount').innerText = basket['number'];
+        localStorage.setItem('cart',JSON.stringify(basket));
     }
 }
 
@@ -41,4 +43,5 @@ function remove(productID,productSize,productPrice){
         document.getElementById("orderList").innerHTML = "<h1>Your cart is empty... Buy something!</h1>";
     }
     document.getElementById('amount').innerText = basket['number'];
+    localStorage.setItem('cart',JSON.stringify(basket));
 }
