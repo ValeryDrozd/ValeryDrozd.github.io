@@ -8,7 +8,7 @@ function increase(productID,productSize,productPrice){
     basket = JSON.parse(basket);
     if(basket['amount'][String([productID,1*productSize])]==undefined){
         basket['amount'][String([productID,1*productSize])] = 0;
-        basket['items'].push([productID,String(productSize)]);
+        basket['items'].push([productID+1,String(productSize)]);
     }
     basket['amount'][String([productID,1*productSize])]+=1;
     let prevprice = getSum();
@@ -35,7 +35,7 @@ function decrease(productID,productSize,productPrice){
         localStorage.setItem('cart',JSON.stringify(basket));
         if(basket['amount'][String([productID,1*productSize])]==0){
             delete basket['amount'][String([[productID,1*productSize]])];
-            basket['items'].splice(basket.indexOf([productID,String(productSize)]));
+            basket['items'].splice(basket['items'].indexOf([productID,String(productSize)]));
         }
         localStorage.setItem('cart',JSON.stringify(basket));
     }
