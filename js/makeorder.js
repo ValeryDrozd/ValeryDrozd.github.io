@@ -90,7 +90,7 @@ function validate(orderData){
     if(ValidateEmail(orderData['email'])==false){return false;}
     if(orderData['delCity'].length==0){return false;}
     if(orderData['address'].length==0){return false;}
-    if(validateDate(orderData['DeliveryDate'])==false){return false;}
+    if(validateDate(orderData['deliverydate'])==false){return false;}
     if(document.getElementById('paycard').checked==true){
         if(validateCard(orderData['cnumber'])==false){alert('Wrong card number!');return false;}
         if(validateCVV(orderData['cvv'])==false){alert('Wrong card number!');return false;}
@@ -186,10 +186,13 @@ async function makeorder(){
     if(validate(userData)==true){
         let id = await fetch("https://my-json-server.typicode.com/ValeryDrozd/Valerydrozd.github.io/orders",{method:'POST'}).then(res => res.json());
         let orders = getOrder();
-        orders[''] = getCart();
+        orders['ordercart'][id] = getCart();
+        orders['orderdata'][id] = userData();
         localStorage.setItem('orders',JSON.stringify(orders));
         localStorage.removeItem('cart');
         window.location.hash = '#order/'+id;
+        document.getElementById("amount").innerText = 0;
+        genOrderList();
     }
     else{
         alert('Something wrong in validation');
