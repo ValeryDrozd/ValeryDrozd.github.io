@@ -48,7 +48,7 @@ function remove(productID,productSize,productPrice){
     basket['number']-=basket['amount'][String([productID+1,1*productSize])];
     delete basket['amount'][String([productID+1,1*productSize])];
     basket['items'].splice(basket['items'].indexOf([productID+1,String(productSize)]));
-    document.getElementById("elem"+String(productID)+String(productSize)).style.display = 'none';
+    document.getElementById("elem"+String([productID,productSize])).style.display = 'none';
     if(getSum()==0){
         document.getElementById("orderList").innerHTML = "<h1>Your cart is empty... Buy something!</h1>";
     }
