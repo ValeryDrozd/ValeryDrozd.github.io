@@ -160,9 +160,9 @@ async function genOrderList(){
         sum+=basket['amount'][basket['items'][i]]*product['price'][productSize*1];
     }
     
-    form+='</table><h3 style="text-align:center">Final sum '+sum+'+UAH</h3>'
+    form+='</table><h3 style="text-align:center">Final sum '+sum+'UAH</h3>'
     let deliveryDate = new Date(order['orderdata'][id]['deliverydate']);
-    form+='<h4 style="text-align:center;">Order will be delivered to '+order['orderdata'][id]['delCity']+' '+order['orderdata'][id]['address']+' at '+deliveryDate.getDate(),' ,'+deliveryDate.getHours()+':'+deliveryDate.getMinutes();
+    form+='<h4 style="text-align:center;">Order will be delivered to '+order['orderdata'][id]['delCity']+' '+order['orderdata'][id]['address']+' at '+deliveryDate.getDate()+'.'+(deliveryDate.getMonth()+1)+' at '+deliveryDate.getHours()+':'+deliveryDate.getMinutes();
     form+='</h4></div>';
 
     document.getElementById('orderList').innerHTML = form;

@@ -20,7 +20,7 @@ export async function generatePromo(){
     let images = '';
     
     for(let i=0;i<items.length;i++){
-        images+= '<img class="promoImg" src="./images/'+items[i]['images']+'.jpg" alt="promoimage" data-path="#promos/'+items['id']+'")> ';
+        images+= '<img class="promoImg" src="./images/'+items[i]['images']+'.jpg" alt="promoimage" data-path="#promos/'+items[i]['id']+'")> ';
     }
     document.getElementById('carousel').innerHTML = images;
 }
