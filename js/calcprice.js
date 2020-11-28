@@ -45,9 +45,9 @@ function remove(productID,productSize,productPrice){
     let basket = localStorage.getItem('cart');
     basket = JSON.parse(basket);
     document.getElementById('allsum').innerText = getSum() - productPrice*basket['amount'][String([productID+1,1*productSize])];
-    basket['number']-=basket['amount'][String([[productID,1*productSize]])];
-    delete basket['amount'][String([[productID+1,1*productSize]])];
-    basket['items'].splice(basket.indexOf([productID+1,String(productSize)]));
+    basket['number']-=basket['amount'][String([productID+1,1*productSize])];
+    delete basket['amount'][String([productID+1,1*productSize])];
+    basket['items'].splice(basket['items'].indexOf([productID+1,String(productSize)]));
     document.getElementById("elem"+String(productID)+String(productSize)).style.display = 'none';
     if(getSum()==0){
         document.getElementById("orderList").innerHTML = "<h1>Your cart is empty... Buy something!</h1>";
