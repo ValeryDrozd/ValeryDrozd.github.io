@@ -70,7 +70,7 @@ export let routes = {
     '<div id="orderList">'+ 
     '<img src="./images/loading.svg" alt="loadimage" style="width: 100%;height: 250px;">'+
     '</div>',
-    'order':'<div id="orderList">'+ 
+    'clientOrder':'<div id="orderList">'+ 
     '<img src="./images/loading.svg" alt="loadimage" style="width: 100%;height: 250px;">'+
     '</div>',
     'item':
