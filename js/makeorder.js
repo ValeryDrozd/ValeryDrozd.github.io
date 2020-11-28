@@ -184,7 +184,8 @@ async function makeorder(){
     userData['dateofexpire'] = document.getElementById('email').value;
     userData['city'] = document.getElementById('city').value;
     if(validate(userData)==true){
-        let id = await fetch("https://my-json-server.typicode.com/ValeryDrozd/Valerydrozd.github.io/categories",{method:'POST'}).then(res => res.json())['id'];
+        let id = await fetch("https://my-json-server.typicode.com/ValeryDrozd/Valerydrozd.github.io/categories",{method:'POST'}).then(res => res.json());
+        id = id['id'];
         let orders = getOrder();
         orders['ordercart'][id] = getCart();
         orders['orderdata'][id] = userData;
