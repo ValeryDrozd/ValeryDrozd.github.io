@@ -9,7 +9,7 @@ function getCart(){
 function getOrder(){
     let orders = JSON.parse(localStorage.getItem('orders'));
     if(orders==null)orders = {'orderdata':{},'ordercart':{}};
-    return JSON.parse(orders);
+    return orders;
 }
 
 function validateName(name){
@@ -23,10 +23,6 @@ function validateName(name){
        {
        return false;
        }
-}
-
-function validateDate(){
-
 }
 
 function ValidateEmail(mail) 
@@ -77,11 +73,11 @@ function validateDE(date){
     return false;
 }
 
-function validateDate(){
+function validateDate(orderDate){
     let today = new Date();
+    orderDate = new Date(orderDate);
     if(orderDate=='')return false;
-    let orderDate = new Date(document.getElementById('deldate').value);
-    let diff = (today.getTime()-orderDate.getTime())/(1000*3600);
+    let diff = (orderDate.getTime()-today.getTime())/(1000*3600);
     if(diff>3 && diff<96)return true;
     return false;
 }
@@ -93,7 +89,7 @@ function validate(orderData){
     if(orderData['phone'].match(/\d/g).length!==10 || orderData['phone'].length!=10 || ['099','098','097','096','095','093','068','067','066','063','061'].indexOf(orderData['phone'].substring(0,3))==-1){alert('Wrong phone number');return true;}
     if(ValidateEmail(orderData['email'])==false){return false;}
     if(orderData['delCity'].length==0){return false;}
-    if(orderData['delAddr'].length==0){return false;}
+    if(orderData['address'].length==0){return false;}
     if(validateDate(orderData['DeliveryDate'])==false){return false;}
     if(document.getElementById('paycard').checked==true){
         if(validateCard(orderData['cnumber'])==false){alert('Wrong card number!');return false;}
