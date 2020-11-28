@@ -2,7 +2,7 @@ function getCart(){
     let basket = localStorage.getItem('cart');
     if(basket!=null)basket = JSON.parse(basket);
     else
-        basket = {'items':[],'amount':{},'number':0,'unitprice':{}};
+        basket = {'items':[],'amount':{},'number':0,'unitprice':0};
     return basket;
 }
 
@@ -30,9 +30,22 @@ function changeElem(id,price){
     for(let i=0;i<radios.length;i++){
         if(radios[i].checked){
             document.getElementById('unitprice'+id).innerText = "One item price: "+price+"UAH";
-            document.getElementById('buy'+id).innerText = ((basket['amount'][[id,radios[i].value]]==1)?"In the cart":"Buy");
+            document.getElementById('buy'+id).innerText = ((basket['amount'][String(id,radios[i].value)]>=1)?"In the cart":"Buy");
+            document.getElementById('buy'+id).style.backgroundColor = ((basket['amount'][String(id,radios[i].value)]>=1)?"#2ECC71;":"#D5F5E3;");
             document.getElementById('buy'+id).value = price;
             break;
         }
     }
 } 
+
+function increase(){
+
+}
+
+function decrease(){
+
+}
+
+function remove(){
+
+}
