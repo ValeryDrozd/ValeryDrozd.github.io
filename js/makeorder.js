@@ -186,7 +186,7 @@ async function makeorder(){
     userData['cnumber'] = document.getElementById('surname').value;
     userData['cvv'] = document.getElementById('phone').value;
     userData['dateofexpire'] = document.getElementById('email').value;
-    userData['city'] = document.getElementById('delivery').value;
+    userData['city'] = document.getElementById('city').value;
     if(validate(userData)==true){
         let id = await fetch("https://my-json-server.typicode.com/ValeryDrozd/Valerydrozd.github.io/orders",{method:'POST'}).then(res => res.json());
         let orders = getOrder();
