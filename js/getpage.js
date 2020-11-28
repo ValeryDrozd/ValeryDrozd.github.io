@@ -36,7 +36,7 @@ export let routes = {
     '<label for="email">Enter email</label><br>'+
     '<input class="input" type="email" id="email" required placeholder="some@example.com"><br>'+
     '<label for="delCity">Enter delivery city</label><br>'+
-    '<select id="delCity"> <option value="Lviv" selected > Lviv </option><option value="Lviv" selected > Kyiv </option> <option value="Lviv" selected > Khmelnytskyi </option></select>'+
+    '<select id="delCity"> <option value="Lviv" selected > Lviv </option><option value="Kyiv" selected > Kyiv </option> <option value="Khmelnytskyi" selected > Khmelnytskyi </option></select><br>'+
     '<label for="address">Enter delivery address</label><br>'+
     '<input type="text" id="address" required placeholder="some-street 21/54"><br>'+
     '<label for="deldate">Delivery date and time</label><br>'+
@@ -64,7 +64,7 @@ export let routes = {
     '</div>'+
     '<button id="buybutton" onclick="makeorder()"> Make order </button>'+
 '</div>',
-    'promo':'<div><div id="promoImage">'+'<img src="./images/loading.svg" alt="loadimage" style="width: 100%;height: 250px;">'+'</div>'+
+    'promo':'<div id="promoContainer" ><div id="promoImage">'+'<img src="./images/loading.svg" alt="loadimage" style="width: 100%;height: 250px;">'+'</div>'+
             '<div id="promoDescription">'+'<img src="./images/loading.svg" alt="loadimage" style="width: 100%;height: 250px;">'+'</div></div>',
     'cart':
     '<div id="orderList">'+ 
