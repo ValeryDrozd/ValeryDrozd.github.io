@@ -122,7 +122,7 @@
                         document.getElementById('content').innerHTML = routes['main'];
                         let ls = await generateItems('recommended');
                         document.getElementById('goodsField').innerHTML = ls;
-                        generatePromo();
+                        await generatePromo();
                         document.getElementById("prevbutton").style.display = 'inline-block';
                         document.getElementById("nextbutton").style.display = 'inline-block';
                         document.querySelectorAll('.promoImg').forEach(el => {
