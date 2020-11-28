@@ -115,7 +115,7 @@ async function genOrderList(){
     let order =  getOrder();
     let basket = order['ordercart'][id];
     let productList = await fetch("https://my-json-server.typicode.com/ValeryDrozd/Valerydrozd.github.io/products").then(res => res.json());
-    let form = '<div id="list"><h3>Order id:'+id+'</h3><table>';
+    let form = '<div id="list"><h3 style="text-align:center;">Order id:'+id+'</h3><table>';
         form+='<tr>';
         form+='<td class="image"></td>';
         form+='<td class="name" >Product name</td>';
@@ -161,10 +161,10 @@ async function genOrderList(){
         sum+=basket['amount'][basket['items'][i]]*product['price'][productSize*1];
     }
     
-    form+='</table><h3>Final sum'+sum+'</h3>'
-    let deliveryDate = new Date(order['orderdata'][id]['address']);
-    form+='Order will be delivered to '+order['orderdata'][id]['delCity']+' '+order['orderdata'][id]['address']+' at '+deliveryDate.getDate(),' ,'+deliveryDate.getHours()+':'+deliveryDate.getMinutes();
-    form+='</div>';
+    form+='</table><h3 style="text-align:center">Final sum '+sum+'</h3>'
+    let deliveryDate = new Date(order['orderdata'][id]['deliverydate']);
+    form+='<h6 style="text-align:center;">Order will be delivered to '+order['orderdata'][id]['delCity']+' '+order['orderdata'][id]['address']+' at '+deliveryDate.getDate(),' ,'+deliveryDate.getHours()+':'+deliveryDate.getMinutes();
+    form+='</h6></div>';
 
     document.getElementById('orderList').innerHTML = form;
 }
