@@ -78,6 +78,8 @@
                         document.getElementById('cartBtn').style.backgroundColor = '#F9E79F';
                         document.getElementById('content').innerHTML = routes['cart'];
                         document.getElementById('orderList').innerHTML = await generateOrderList();
+                        document.getElementById("confirm").addEventListener("click",jump);
+                        document.getElementById("clearorderlist").addEventListener("click",jump);
                         break;
                     case ('#order'):
                         if(getCart()['number']>0){
@@ -96,9 +98,22 @@
                     case link:
                         let t = await valid(link);
                         if(t==true){
-                            document.getElementById('content').innerHTML = routes['item'];
-                            generateProduct(link);
-                            break;
+                            let group = path.substr(link.indexOf('#')+1,link.indexOf('/')-1);
+                            if(group=='products'){
+                                document.getElementById('content').innerHTML = routes['item'];
+                                generateProduct(link);
+                                break;
+                            }
+                            if(group=='promos'){
+                                document.getElementById('content').innerHTML = routes['promo'];
+                                generateProduct(link);
+                                break;
+                            }
+                            if(group=='order'){
+                                document.getElementById('content').innerHTML = routes['clientorder'];
+                                generateOrder(link.substr(link.indexOf('/')+1));
+                                break;
+                            }
                         }
                         window.location.hash = "";
                     default:
@@ -109,11 +124,20 @@
                         generatePromo();
                         document.getElementById("prevbutton").style.display = 'inline-block';
                         document.getElementById("nextbutton").style.display = 'inline-block';
+                        document.querySelectorAll('.promoImg').forEach(el => {
+                            el.addEventListener('click', jump);
+                        })
                         break;
                 }
                 document.querySelectorAll('.good img').forEach(el => {
                     el.addEventListener('click', jump);
                 })
+            }
+
+            function clearOrderList(){
+                localStorage.removeItem('cart');
+                window.location.hash = '';
+                router();
             }
 
             function jump(){
