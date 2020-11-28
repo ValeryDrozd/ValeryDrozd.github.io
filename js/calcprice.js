@@ -5,11 +5,11 @@ function getSum(){
 
 function increase(productID,productSize,productPrice){
     let basket = localStorage.getItem('cart');
+    basket = JSON.parse(basket);
     if(basket['amount'][String([productID,1*productSize])]==undefined){
         basket['amount'][String([productID,1*productSize])] = 0;
         basket['items'].push([productID,String(productSize)]);
     }
-    basket = JSON.parse(basket);
     basket['amount'][String([productID,1*productSize])]+=1;
     let prevprice = getSum();
     document.getElementById('sum'+productID+productSize).innerText = prevprice+productPrice*1;
