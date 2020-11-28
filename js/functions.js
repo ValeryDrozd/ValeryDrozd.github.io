@@ -150,7 +150,8 @@ export async function generateOrderList(){
         form+='</tr>';
     }
     form+='</table></div>'
-    form += '<table class="itemList"><tr><td style="font-weigth:bolder;height:100%;"> All price </td><td></td><td></td><td></td><td id="allsum" style="font-weigth:bolder">'+sum+'UAH</td></tr></table>';
+    form+='<hr style="width:80%;">'
+    form += '<table class="itemList"><tr><td style="font-weight:bolder;height:100%;"> All price </td><td></td><td></td><td></td><td id="allsum" style="font-weight:bolder">'+sum+'UAH</td></tr></table>';
     form += '<button id="confirm"> CONFIRM </button></div>';
     form += '<button id="clearorderlist"> Clear order list </button></div>';
 
