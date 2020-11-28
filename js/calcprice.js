@@ -12,8 +12,7 @@ function increase(productID,productSize,productPrice){
     }
     else
     basket['amount'][String([productID+1,1*productSize])]+=1;
-    let prevprice = getSum();
-    document.getElementById('sum'+productID+productSize).innerText = prevprice+productPrice*1;
+    document.getElementById('sum'+productID+productSize).innerText = productPrice*basket['amount'][String([productID+1,1*productSize])]+'UAH';
     document.getElementById('allsum').innerText = getSum()+productPrice+'UAH';
     document.getElementById('amount'+productID+productSize).innerText= basket['amount'][String([productID+1,1*productSize])];
     localStorage.setItem('cart',JSON.stringify(basket));
@@ -45,7 +44,7 @@ function decrease(productID,productSize,productPrice){
 function remove(productID,productSize,productPrice){
     let basket = localStorage.getItem('cart');
     basket = JSON.parse(basket);
-    document.getElementById('sum'+productID+productSize).innerText = getSum() - productPrice*basket['amount'][String([productID+1,1*productSize])];
+    document.getElementById('allsum').innerText = getSum() - productPrice*basket['amount'][String([productID+1,1*productSize])];
     basket['number']-=basket['amount'][String([[productID,1*productSize]])];
     delete basket['amount'][String([[productID+1,1*productSize]])];
     basket['items'].splice(basket.indexOf([productID+1,String(productSize)]));
