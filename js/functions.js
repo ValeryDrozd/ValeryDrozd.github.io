@@ -109,7 +109,7 @@ export async function generateOrderList(){
         form+='<tr id="elem'+productID+','+productSize+'">';
         form+='<td class="image" >';
         //Photo
-        form+= '<img src= "./images/'+product['url']+'.jpg" >';
+        form+= '<img src= "./images/'+product['url']+'.jpg" alt=itemImage >';
         form+='</td>';
         form+='<td class="name">';
         //NAME
