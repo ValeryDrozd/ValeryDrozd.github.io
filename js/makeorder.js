@@ -113,7 +113,7 @@ async function genOrderList(){
     document.getElementById('content').innerHTML = container;
     let id = window.location.hash.substring(window.location.hash.indexOf('/')+1);
     let order =  getOrder();
-    let basket = order['orderitem'][id];
+    let basket = order['ordercart'][id];
     let productList = await fetch("https://my-json-server.typicode.com/ValeryDrozd/Valerydrozd.github.io/products").then(res => res.json());
     let form = '<div id="list"><h3>Order id:'+id+'</h3><table>';
         form+='<tr>';
