@@ -8,10 +8,9 @@ function increase(productID,productSize,productPrice){
     let basket = localStorage.getItem('cart');
     basket = JSON.parse(basket);
     basket['amount'][String([productID,1*productSize])]+=1;
-    let prevprice = document.getElementById('allsum').innerText;
-    prevprice = 1*value.substring(0,value.indexOf('U'));
+    let prevprice = getSum();
     document.getElementById('sum'+productID+productSize).innerText = prevprice+productPrice*1;
-    document.getElementById('allsum') = getSum()+productPrice;
+    document.getElementById('allsum').innerText = getSum()+productPrice;
     localStorage.setItem('cart',JSON.stringify(basket));
     basket['number']++;
 }
@@ -23,8 +22,9 @@ function decrease(productID,productSize,productPrice){
         basket['amount'][String([productID,1*productSize])]-=1;
         let prevprice = getSum();
         document.getElementById('sum'+productID+productSize).innerText = prevprice-productPrice*1;
-        document.getElementById('allsum') = getSum()+productPrice;
+        document.getElementById('allsum').innerText = getSum()+productPrice;
         localStorage.setItem('cart',JSON.stringify(basket));
+        document.getElementById()
         basket['number']--;
     }
 }
