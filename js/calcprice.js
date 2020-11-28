@@ -24,7 +24,6 @@ function decrease(productID,productSize,productPrice){
         document.getElementById('sum'+productID+productSize).innerText = prevprice-productPrice*1;
         document.getElementById('allsum').innerText = getSum()+productPrice+'UAH';
         localStorage.setItem('cart',JSON.stringify(basket));
-        document.getElementById()
         basket['number']--;
         document.getElementById('amount').innerText = basket['number'];
     }
