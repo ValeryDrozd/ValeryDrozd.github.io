@@ -44,7 +44,7 @@
 
         <script async type="module">
             import { routes } from './js/getpage.js';
-            import { generatePromo,generateItems,getCart,generateProduct,valid,generateOrderList } from './js/functions.js';
+            import { generatePromo,generateItems,getCart,generateProduct,valid,generateOrderList,generateOrder,generatePromoPage,   } from './js/functions.js';
 
 
             document.querySelectorAll('.nav').forEach(el => {
@@ -85,6 +85,7 @@
                         if(getCart()['number']>0){
                             document.getElementById('orderBtn').style.backgroundColor = '#F9E79F';
                             document.getElementById('content').innerHTML = routes['order'];
+                            generateOrderList();
                             break;
                         }else
                         link = '#all';
@@ -106,7 +107,7 @@
                             }
                             if(group=='promos'){
                                 document.getElementById('content').innerHTML = routes['promo'];
-                                generateProduct(link);
+                                generatePromoPage(link);
                                 break;
                             }
                             if(group=='order'){
