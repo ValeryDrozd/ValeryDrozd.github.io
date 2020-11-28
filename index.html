@@ -99,7 +99,7 @@
                     case link:
                         let t = await valid(link);
                         if(t==true){
-                            let group = path.substr(link.indexOf('#')+1,link.indexOf('/')-1);
+                            let group = link.substr(link.indexOf('#')+1,link.indexOf('/')-1);
                             if(group=='products'){
                                 document.getElementById('content').innerHTML = routes['item'];
                                 generateProduct(link);
@@ -138,6 +138,7 @@
             function clearOrderList(){
                 localStorage.removeItem('cart');
                 window.location.hash = '';
+                document.getElementById('amount').innerText = '0';
                 router();
             }
 
