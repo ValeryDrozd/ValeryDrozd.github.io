@@ -3,16 +3,16 @@ function getSum(){
     return 1*value.substring(0,value.indexOf('U'));
 }
 
-//let allItems = fetch("https://my-json-server.typicode.com/ValeryDrozd/Valerydrozd.github.io/promos").then(res => res.json());
 function increase(productID,productSize,productPrice){
     let basket = localStorage.getItem('cart');
     basket = JSON.parse(basket);
     basket['amount'][String([productID,1*productSize])]+=1;
     let prevprice = getSum();
     document.getElementById('sum'+productID+productSize).innerText = prevprice+productPrice*1;
-    document.getElementById('allsum').innerText = getSum()+productPrice;
+    document.getElementById('allsum').innerText = getSum()+productPrice+'UAH';
     localStorage.setItem('cart',JSON.stringify(basket));
     basket['number']++;
+    document.getElementById('amount').innerText = basket['number'];
 }
 
 function decrease(productID,productSize,productPrice){
@@ -22,10 +22,11 @@ function decrease(productID,productSize,productPrice){
         basket['amount'][String([productID,1*productSize])]-=1;
         let prevprice = getSum();
         document.getElementById('sum'+productID+productSize).innerText = prevprice-productPrice*1;
-        document.getElementById('allsum').innerText = getSum()+productPrice;
+        document.getElementById('allsum').innerText = getSum()+productPrice+'UAH';
         localStorage.setItem('cart',JSON.stringify(basket));
         document.getElementById()
         basket['number']--;
+        document.getElementById('amount').innerText = basket['number'];
     }
 }
 
@@ -40,4 +41,5 @@ function remove(productID,productSize,productPrice){
     if(getSum()==0){
         document.getElementById("orderList").innerHTML = "<h1>Your cart is empty... Buy something!</h1>";
     }
+    document.getElementById('amount').innerText = basket['number'];
 }
