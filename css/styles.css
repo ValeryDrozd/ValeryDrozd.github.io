@@ -41,13 +41,6 @@ header button:focus{
     background-color:#F9E79F;
 }
 
-#logo{
-    color:orange;
-    height: 90%;
-    margin: 0 auto;
-    font-size: 2em;
-}
-
 #content{
     width: 100%;
     height: 82.2vh;
@@ -60,6 +53,16 @@ header button:focus{
     margin: auto;
     overflow: hidden;
     margin-top: 10px;
+}
+
+#promoContainer{
+    width: 60%;
+}
+
+#promoImage img{
+    margin: 0 auto;
+    display: block;
+    margin-top: 20px
 }
 
 #buttons{
