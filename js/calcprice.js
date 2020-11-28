@@ -27,8 +27,8 @@ function decrease(productID,productSize,productPrice){
     if( basket['amount'][String([[productID,1*productSize]])]>0){
         basket['amount'][String([productID,1*productSize])]-=1;
         let prevprice = getSum();
-        document.getElementById('sum'+productID+productSize).innerText = prevprice-productPrice*1+'UAH';
-        document.getElementById('allsum').innerText = getSum()+productPrice+'UAH';
+        document.getElementById('sum'+productID+productSize).innerText = productPrice*basket['amount'][String([productID,1*productSize])]+'UAH';
+        document.getElementById('allsum').innerText = prevprice*productPrice+'UAH';
         basket['number']--;
         document.getElementById('amount'+productID+productSize).innerText= basket['amount'][String([productID,1*productSize])];
         document.getElementById('amount').innerText = basket['number'];
