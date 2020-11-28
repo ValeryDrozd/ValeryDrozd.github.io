@@ -8,7 +8,7 @@ function getCart(){
 
 function getOrder(){
     let orders = JSON.parse(localStorage.getItem('orders'));
-    if(orders==null)orders = {'orderdata':{},'ordercart':{}};
+    if(orders==null)orders = {'orderdata':{},'ordercart':{},'orderids':[]};
     return orders;
 }
 
@@ -88,7 +88,6 @@ function validate(orderData){
     if(validateName(orderData['surname'])==false){alert('Wrong surname');return false;}
     if(orderData['phone'].match(/\d/g).length!==10 || orderData['phone'].length!=10 || ['099','098','097','096','095','093','068','067','066','063','061'].indexOf(orderData['phone'].substring(0,3))==-1){alert('Wrong phone number');return true;}
     if(ValidateEmail(orderData['email'])==false){return false;}
-    if(orderData['delCity'].length==0){return false;}
     if(orderData['address'].length==0){return false;}
     if(validateDate(orderData['deliverydate'])==false){return false;}
     if(document.getElementById('paycard').checked==true){
@@ -190,6 +189,7 @@ async function makeorder(){
         let orders = getOrder();
         orders['ordercart'][id] = getCart();
         orders['orderdata'][id] = userData;
+        orders['orderids'].push(id);
         localStorage.setItem('orders',JSON.stringify(orders));
         localStorage.removeItem('cart');
         window.location.hash = '#order/'+id;
