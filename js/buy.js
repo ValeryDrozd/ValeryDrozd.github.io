@@ -11,7 +11,7 @@ function buy(id){
     let radios = document.getElementsByName(id);
     for(let i=0;i<radios.length;i++){
         if(radios[i].checked){
-            if(basket['items'].indexOf([id,radios[i].value])==-1){
+            if(basket['amount'][String([id,radios[i].value])]==undefined){
                 basket['items'].push([id,radios[i].value]);
                 basket['amount'][[id,radios[i].value]] = 1;
                 basket['number']+=1;
@@ -37,15 +37,3 @@ function changeElem(id,price){
         }
     }
 } 
-
-function increase(){
-
-}
-
-function decrease(){
-
-}
-
-function remove(){
-
-}
