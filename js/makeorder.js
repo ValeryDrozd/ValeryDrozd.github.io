@@ -65,7 +65,7 @@ return false;
 
 function validateDE(date){
     let month = 1*date.substring(0,2);
-    let year = 1*date.substring(3);
+    let year = 2000+1*date.substring(3);
     let yearNow = new Date().getFullYear();
     let monthNow = new Date().getMonth();
     if(12<month || 1>month || year-yearNow>5)return false;
