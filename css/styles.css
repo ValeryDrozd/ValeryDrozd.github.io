@@ -445,7 +445,7 @@ td .image{
         position: fixed;
         width: 100%;
     }
-    #buybutton{
+    #form #buybutton{
         margin-bottom: 100px;
         font-size: 1.1em;
     }
