@@ -12,7 +12,7 @@ function init(){
 }
 
 function slideleft(){
-    init();
+  //   init();
     if(number!=0){
         carousel.style.transition = "transform 0.4s ease-in-out";
         number--;

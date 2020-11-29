@@ -59,7 +59,7 @@ function luhnCheck(val) {
 }
 
 function validateCVV(cvv){
-    if (/[0-9]{3,4}+/.test(cvv))return true
+    if ((/^\d{3,4}$/).test(cvv))return true
 return false;
 }
 
