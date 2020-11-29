@@ -338,7 +338,7 @@ td .image{
     display: block;
 }
 
-@media only screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
     body{
         font: 2em sans-serif;
     }
@@ -361,4 +361,29 @@ td .image{
         display: block;
         width: 325px;
     }
+    #item{
+        height: 90vh;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 3fr;
+        gap: 0px 0px;
+        grid-template-areas:
+        "image"
+        "desc"
+        ;
+    }
+
+#image{
+    grid-area: image;
+    margin: 0 auto;
+}
+
+#desc{
+    grid-area: data;
+    font-size: 2em;
+    margin: 0 auto;
+}
 }
