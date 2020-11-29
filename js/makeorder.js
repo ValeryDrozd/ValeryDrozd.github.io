@@ -93,8 +93,8 @@ function validate(orderData){
     if(validateDate(orderData['deliverydate'])==false){return false;}
     if(document.getElementById('paycard').checked==true){
         if(validateCard(orderData['cnumber'])==false){alert('Wrong card number!');return false;}
-        if(validateCVV(orderData['cvv'])==false){alert('Wrong card number!');return false;}
-        if(validateDE(orderData['dateofexpire'])==false){alert('Wrong card number!');return false;}
+        if(validateCVV(orderData['cvv'])==false){alert('Wrong cvv code!');return false;}
+        if(validateDE(orderData['dateofexpire'])==false){alert('Wrong date of expire!');return false;}
         if(orderData['city'].length==0){alert('Wrong card number!');return false;}
     }
     return true;
@@ -181,8 +181,8 @@ async function makeorder(){
     userData['address'] = document.getElementById('address').value;
     userData['deliverydate'] = document.getElementById('deldate').value;
     userData['cnumber'] = document.getElementById('cnumber').value;
-    userData['cvv'] = document.getElementById('phone').value;
-    userData['dateofexpire'] = document.getElementById('email').value;
+    userData['cvv'] = document.getElementById('cvv').value;
+    userData['dateofexpire'] = document.getElementById('dateofexpire').value;
     userData['city'] = document.getElementById('city').value;
     if(validate(userData)==true){
         let id = await fetch("https://my-json-server.typicode.com/ValeryDrozd/Valerydrozd.github.io/categories",{method:'POST'}).then(res => res.json());
