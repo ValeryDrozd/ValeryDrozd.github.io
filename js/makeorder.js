@@ -68,6 +68,7 @@ function validateDE(date){
     let year = 1*date.substring(3);
     let yearNow = new Date().getFullYear();
     let monthNow = new Date().getMonth();
+    if(12<month || 1>month || year-yearNow>5)return false;
     if(year>yearNow)return true;
     if(yearNow==year && month+1>=monthNow)return true;
     return false;
@@ -179,7 +180,7 @@ async function makeorder(){
     userData['delCity'] = document.getElementById('delCity').value;
     userData['address'] = document.getElementById('address').value;
     userData['deliverydate'] = document.getElementById('deldate').value;
-    userData['cnumber'] = document.getElementById('surname').value;
+    userData['cnumber'] = document.getElementById('cnumber').value;
     userData['cvv'] = document.getElementById('phone').value;
     userData['dateofexpire'] = document.getElementById('email').value;
     userData['city'] = document.getElementById('city').value;
