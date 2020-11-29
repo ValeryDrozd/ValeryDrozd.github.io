@@ -79,7 +79,7 @@
                         document.getElementById('content').innerHTML = routes['cart'];
                         document.getElementById('orderList').innerHTML = await generateOrderList();
                         document.getElementById("confirm").addEventListener("click",jump);
-                        document.getElementById("clearorderlist").addEventListener("click",jump);
+                        document.getElementById("clearorderlist").addEventListener("click",clearOrderList);
                         break;
                     case ('#order'):
                         if(getCart()['number']>0){
@@ -134,6 +134,7 @@
                     el.addEventListener('click', jump);
                 })
             }
+
 
             function clearOrderList(){
                 localStorage.removeItem('cart');
