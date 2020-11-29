@@ -98,7 +98,7 @@
                         break;
                     case link:
                         let t = await valid(link);
-                        if(t==true && link!='#'){
+                        if(t==true){
                             let group = link.substr(link.indexOf('#')+1,link.indexOf('/')-1);
                             if(group=='products'){
                                 document.getElementById('content').innerHTML = routes['item'];
