@@ -277,6 +277,11 @@ header button:focus{
     grid-area: image;
 }
 
+#image img{
+    width: 500px;
+}
+
+
 #desc{
     grid-area: data;
 }
@@ -308,6 +313,9 @@ td .image{
     cursor: pointer;
 }
 
+#image img{
+    width: 500px;
+}
 
 
 #confirm{
@@ -342,6 +350,9 @@ td .image{
     body{
         font: 1.1em sans-serif;
     }
+    header button{
+        font-size: 1.5em;
+    }
     .goods{
         height: 90vh;
     }
@@ -357,9 +368,12 @@ td .image{
         font-size: 1.6em;
         margin-bottom: 20px;
     }
-    .good image{
+    .good img{
         display: block;
         width: 325px;
+    }
+    .good span{
+        margin:30px;
     }
     #item{
         height: 90vh;
@@ -379,6 +393,10 @@ td .image{
 #image{
     grid-area: image;
     margin: 0 auto;
+}
+
+#image img{
+    width: 400px;
 }
 
 #desc{
