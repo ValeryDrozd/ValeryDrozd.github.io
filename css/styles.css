@@ -340,7 +340,7 @@ td .image{
 
 @media screen and (max-width: 800px) {
     body{
-        font: 2em sans-serif;
+        font: 1.1em sans-serif;
     }
     .goods{
         height: 90vh;
