@@ -360,7 +360,7 @@ td .image{
         padding: 10px;
         margin: 10px;
         width: 500px;
-        height: 700px;
+        height: 650px;
         border: 1px solid #D5D8DC;
         box-shadow: #EBEDEF 3px 3px 2px 2px;
         border-radius: 10px;
@@ -405,12 +405,16 @@ td .image{
 
     #desc{
         grid-area: desc;
-        font-size: 2em;
+        font-size: 1.5em;
         margin: 0 auto;
+        height: 110%;
     }
 }
 
 @media screen and (max-width: 678px) {
+    #image{
+        margin: 0 auto;
+    }
     #promos{
         width: 90%;
     }
