@@ -409,6 +409,7 @@ td .image{
         margin: 0 auto;
         height: 110%;
     }
+    
 }
 
 @media screen and (max-width: 678px) {
@@ -440,5 +441,9 @@ td .image{
         bottom: 0px;
         position: fixed;
         width: 100%;
+    }
+    #buyButton{
+        margin-bottom: 100px;
+        font-size: 1.1em;
     }
 }
