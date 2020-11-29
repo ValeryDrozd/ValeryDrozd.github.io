@@ -6,7 +6,7 @@ init();
 function init(){
     carousel = document.querySelector('#carousel');
     carouselimages = document.querySelectorAll('#carousel img');
-    if(carouselimages.size()>0) size = carouselimages[0].clientWidth;
+    if(carouselimages.size>0) size = carouselimages[0].clientWidth;
     document.getElementById("promos").style.width = size;
     number = 0; 
 }
