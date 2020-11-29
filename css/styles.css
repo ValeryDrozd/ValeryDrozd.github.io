@@ -346,12 +346,12 @@ td .image{
     display: block;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
     body{
         font: 1.1em sans-serif;
     }
     header button{
-        font-size: 1.3em;
+        font-size: 1.1em;
     }
     .goods{
         height: 90vh;
@@ -360,20 +360,21 @@ td .image{
         padding: 10px;
         margin: 10px;
         width: 500px;
-        height: 700px;
+        height: 750px;
         border: 1px solid #D5D8DC;
         box-shadow: #EBEDEF 3px 3px 2px 2px;
         border-radius: 10px;
         background-color: #FEF9E7;
-        font-size: 1.6em;
+        font-size: 1.3em;
         margin-bottom: 20px;
     }
     .good img{
         display: block;
         width: 325px;
+        margin-top: 0 auto;
     }
     .good span{
-        margin:30px;
+        margin:25px;
     }
     #item{
         height: 90vh;
