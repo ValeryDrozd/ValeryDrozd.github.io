@@ -3,6 +3,13 @@ function getSum(){
     return 1*value.substring(0,value.indexOf('U'));
 }
 
+function findIndexInTheArray(arr,elem){
+    for(let i=0;i<arr.length;i++){
+        if(arr[i].values==elem.values)return i;
+    }
+    return -1;
+}
+
 function increase(productID,productSize,productPrice){
     let basket = localStorage.getItem('cart');
     basket = JSON.parse(basket);
@@ -35,7 +42,7 @@ function decrease(productID,productSize,productPrice){
         localStorage.setItem('cart',JSON.stringify(basket));
         if(basket['amount'][String([productID+1,1*productSize])]==0){
             delete basket['amount'][String([[productID+1,1*productSize]])];
-            basket['items'].splice(basket['items'].indexOf([productID+1,String(productSize)]));
+            basket['items'].splice(findIndexInTheArray(basket["items"],[productID,String(productSize)]),1);
         }
         localStorage.setItem('cart',JSON.stringify(basket));
     }
@@ -47,10 +54,10 @@ function remove(productID,productSize,productPrice){
     document.getElementById('allsum').innerText = getSum() - productPrice*basket['amount'][String([productID+1,1*productSize])]+'UAH';
     basket['number']-=basket['amount'][String([productID+1,1*productSize])];
     delete basket['amount'][String([productID+1,1*productSize])];
-    basket['items'].splice(basket['items'].indexOf([productID+1,String(productSize)]));
+    basket['items'].splice(findIndexInTheArray(basket["items"],[productID,String(productSize)]),1);
     document.getElementById("elem"+String([productID,productSize])).style.display = 'none';
     if(getSum()==0){
-        document.getElementById("orderList").innerHTML = "<h1>Your cart is empty... Buy something!</h1>";
+        document.getElementById("orderList").innerHTML = "<h1 style='text-align:center'>Your cart is empty... Buy something!</h1>";
     }
     document.getElementById('amount').innerText = basket['number'];
     localStorage.setItem('cart',JSON.stringify(basket));
