@@ -152,7 +152,6 @@ async function genOrderList(){
         //AMOUNT
         form+='<td class="amount" id=amount'+String(productID)+String(productSize)+'>';
         form+=  String(basket['amount'][basket['items'][i]]);
-        sum+=basket['amount'][basket['items'][i]]*product['price'][productSize*1];
         form+='</td>';
         //FINALSUM
         form+='<td class="allsum" id="sum'+String(productID)+String(productSize)+'">';
